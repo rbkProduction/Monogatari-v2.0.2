@@ -1,14 +1,14 @@
 # Safe Ride
 
-Cette fiction interactive s'est construite dans le cadre du cours [Développement de Jeux Vidéo 2D](https://github.com/ipante/ressources_cours_jeux_video_2D/blob/master/README.md), enseigné par Isaac Pante à l'Université de Lausanne. 
+Ce jeu de prévention s'est construit dans le cadre du cours [Développement de Jeux Vidéo 2D](https://github.com/ipante/ressources_cours_jeux_video_2D/blob/master/README.md), enseigné par Isaac Pante à l'Université de Lausanne. 
 
 ![README image](readMe_image.png)
 
 ## Concept
-Safe ride est une fiction interactive dont le but est de sensibiliser le joueur à la conduite à vélo et l'utilisation de ce moyen de transport dans le traffic routier. 
+Safe ride est un jeu de prévention dont le but est de sensibiliser le joueur à la conduite à vélo et l'utilisation de ce moyen de transport dans le traffic routier. 
 
-Une experte accompagne le joueur tout au long du jeu et le questionne sur ses connaissances du cyclisme. Le joueur sera confronté aux bases du vélo, mais aussi à la signalisation, et violations et infractions, ainsi qu'à l'équipement adéquat du monde cycliste.
-Le but du est de prouver que le joueur n'est pas un danger public et peut rouler librement sur la voie publique. Pour cela, il lui faut répondre correctement à un maximum de questions pour qu'il voit son capital risque descendre, le baromètre qui établi le taux de dangerosité du joueur à vélo.
+Une experte accompagne le joueur tout au long du jeu et le questionne sur ses connaissances du cyclisme. Le joueur sera confronté aux bases du vélo, mais aussi aux violations et infractions, ainsi qu'à l'équipement adéquat du monde cycliste.
+Le but du est de prouver que le joueur n'est pas un danger public et peut rouler librement sur la voie publique. Pour cela, il lui faut répondre correctement à un maximum de questions pour qu'il voit son capital risque descendre. Ce capital risque est représenté par une barre de progression qui établi le taux de dangerosité du joueur selon les réponses aux question.
 
 
 ## Ressources
@@ -40,5 +40,5 @@ Tous les bruits sonores et les musiques sont issus de la bibliothèque audio de 
 
 ### Images
 Toutes les images ont été extraites de [Canva Premium](https://www.canva.com/), ainsi que de [Freepik](https://fr.freepik.com/).
-Les personnages ont gratuitement été réalisé à l'aide de [Scratch](https://scratch.mit.edu/).
+Les personnages ont gratuitement été tirée de [Freepik](https://fr.freepik.com/).
 

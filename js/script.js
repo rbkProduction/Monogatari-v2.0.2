@@ -207,7 +207,7 @@ monogatari.configuration ('Credits', {
 			'Developping',
 		],
 		'Github': [
-			'<a href="https://github.com/rbkProduction/customRide">Code source</a>',
+			'<a href="https://github.com/rbkProduction/Monogatari-v2.0.2">Code source</a>',
 		],
 	},
 	'Sources': {
@@ -226,9 +226,11 @@ monogatari.assets ('gallery', {
 
 // Define the music used in the game.
 monogatari.assets ('music', {
-	intro: 'intro/Georges Lament_Ryan McCaffrey.mp3',
-	game: 'game/Time Slips By_Ryan McCaffrey.mp3',
-	end: 'end/In Dreams - Lish Grooves.mp3',
+	intro: 'intro/Smoke - Lish Grooves.mp3',
+	chapter1: 'chapter1/Sofa - Dyalla.mp3',
+	chapter2: 'chapter2/Bump - Dyalla.mp3',
+	chapter3: 'chapter3/In Dreams - Lish Grooves.mp3',
+	end: 'end/Good Energy - Dyalla.mp3',
 });
 
 // Define the voice files used in the game.
@@ -238,9 +240,7 @@ monogatari.assets ('voices', {
 
 // Define the sounds used in the game.
 monogatari.assets ('sounds', {
-	'tools': 'sound_toolsRepair.mp3',
-	'cash': 'sound_cash.mp3',
-	'transition': 'sound_transition.mp3',
+	'pedals': 'Bicycle Pedaling.mp3',
 });
 
 // Define the videos used in the game.
@@ -430,12 +430,13 @@ monogatari.script ({
 	'Scene2': [
 		'show scene chapter1 with fadeIn',
 		'wait 5000',
+		'play sound pedals',
 		'jump Scene3',
 	],
 	
 	'Scene3': [
 		// Chapter 1
-		'play music game on loop with volume 30',
+		'play music chapter1 on loop with volume 20',
 		'show scene chapter1_background with fadeIn',
 		'show character p smiling on left with fadeIn',
 		'show character m smiling on right with fadeIn',
@@ -463,7 +464,6 @@ monogatari.script ({
 				},
 			},
 		},
-		'play sound cash',
 		'm Le port du casque, bien que pas obligatoire, peut sauver ta vie dans beaucoup de circonstances.',
 		'm C\'est connu d\'ailleurs...   « Le style vient après la vie » !',
 		'p C\'est vrai.',
@@ -551,18 +551,21 @@ monogatari.script ({
 		'p Merci pour toutes ces informations, je me sens déjà plus à l\'aise avec le sujet !',
 		'm Avec plaisir. J\'espère que tu feras bon usage de ce que tu as appris !',
 		'hide image chapter1_apparels4',
-		'm Passons maintenant aux code de la route.',
+		'm Passons maintenant à la gestuelle des cyclistes, principalement lorsqu\'ils roulent en peloton.',
 		'jump Scene4',
 	],
 
 	'Scene4': [
 		'show scene chapter2 with fadeIn',
 		'wait 5000',
+		'play sound pedals',
 		'jump Scene5',
 	],
 
 	'Scene5': [
 		// Chapter 2
+		'stop music chapter1',
+		'play music chapter2 on loop with volume 20',
 		'show scene chapter2_background with fadeIn',
 		'show character p interested on left with fadeIn',
 		'show character m front on right with fadeIn',
@@ -735,11 +738,14 @@ monogatari.script ({
 	'Scene6': [
 		'show scene chapter3 with fadeIn',
 		'wait 5000',
+		'play sound pedals',
 		'jump Scene7',
 	],
 
 	'Scene7': [
 		// Chapter 3
+		'stop music chapter2',
+		'play music chapter3 on loop with volume 20',
 		'show scene chapter3_background with fadeIn',
 		'show character p smiling on left with fadeIn',
 		'show character m surprised on right with fadeIn',
@@ -876,12 +882,13 @@ monogatari.script ({
 				},
 			},
 		},
+		'play sound pedals',
 		'jump End',
 	],	
 
 	'End': [
-		'stop music game',
-		'play music end on loop with volume 50',
+		'stop music chapter3',
+		'play music end on loop with volume 20',
 		'show scene ending',
 		'show character p smiling on left',
 		'show character m smiling on right',
