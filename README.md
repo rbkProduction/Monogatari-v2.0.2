@@ -5,10 +5,10 @@ Cette fiction interactive s'est construite dans le cadre du cours [Développemen
 ![README image](readMe_image.png)
 
 ## Concept
-Custom ride est une fiction interactive dont le but est de sensibiliser le joueur aux implications financières que représentent un vélo de course, ainsi que de communiquer des connaissances sur les composants d'un vélo et leurs utilités respectives.
+Safe ride est une fiction interactive dont le but est de sensibiliser le joueur à la conduite à vélo et l'utilisation de ce moyen de transport dans le traffic routier. 
 
-Une vendeuse accompagne le joueur tout au long du jeu et lui partage une variété d'informations sur les composants du vélo. Le joueur a un budget à respecter et doit garder trois critères à l'esprit tout au long des choix qui lui seront proposés : (1) qu'il soit léger, (2) qu'il soit fiable et solide, (3) qu'il soit moderne. 
-Chaque étape permet une acquisiton de connaissances supplémentaires sur le vélo. 
+Une experte accompagne le joueur tout au long du jeu et le questionne sur ses connaissances du cyclisme. Le joueur sera confronté aux bases du vélo, mais aussi à la signalisation, et violations et infractions, ainsi qu'à l'équipement adéquat du monde cycliste.
+Le but du est de prouver que le joueur n'est pas un danger public et peut rouler librement sur la voie publique. Pour cela, il lui faut répondre correctement à un maximum de questions pour qu'il voit son capital risque descendre, le baromètre qui établi le taux de dangerosité du joueur à vélo.
 
 
 ## Ressources
@@ -36,5 +36,5 @@ Tous les bruits sonores et les musiques sont issus de la bibliothèque audio de 
 
 ### Images
 Toutes les images ont été extraites de [Canva Premium](https://www.canva.com/), ainsi que de [Freepik](https://fr.freepik.com/).
-Les personnages ont été réalisé gratuitement à l'aide de [Scratch](https://scratch.mit.edu/).
+Les personnages ont gratuitement été réalisé à l'aide de [Scratch](https://scratch.mit.edu/).
 
