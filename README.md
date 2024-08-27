@@ -1,4 +1,4 @@
-# Custom Ride
+# Safe Ride
 
 Cette fiction interactive s'est construite dans le cadre du cours [Développement de Jeux Vidéo 2D](https://github.com/ipante/ressources_cours_jeux_video_2D/blob/master/README.md), enseigné par Isaac Pante à l'Université de Lausanne. 
 
