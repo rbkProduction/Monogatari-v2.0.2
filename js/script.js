@@ -20,6 +20,36 @@ monogatari.action ('message').messages ({
 		subtitle: 'Le porte du casque n\'est pas obligatoire.',
 		body: 'Effectivement, le port du casque n\'est pas obligatoire pour les vélos, bien que vivement recommandé ! Ne serait-ce que pour montrer l\'exemple aux plus jeunes. Il est revanche obligé de le porter pour les personnes qui se déplacent en vélo électrique.',
 	},
+	'Question2_correct': {
+		title: 'Correct !',
+		subtitle: 'C\'est bien 10 LUX',
+		body: 'Une lumière de 10 lux est suffisante pour te permettra de voir la route devant toi en pleine nuit.',
+	},
+	'Question2_incorrect': {
+		title: 'Incorrect !',
+		subtitle: 'C\'était 10 LUX.',
+		body: 'Une lumière de 10 lux est suffisante pour te permettra de voir la route devant toi en pleine nuit.',
+	},
+	'Question3_correct': {
+		title: 'Correct !',
+		subtitle: 'C\'est bien 20 LUX',
+		body: 'Si il n\'y aucun autre éclairage présent sur la route, alors il te faut au moins 20 lux pour voir la route face à toi. Mais n\'oublie pas que tu peux même trouver des lumières à 1500 lux, voir plus !',
+	},
+	'Question3_incorrect': {
+		title: 'Incorrect !',
+		subtitle: 'C\'était 20 LUX.',
+		body: 'Si il n\'y aucun autre éclairage présent sur la route, alors il te faut au moins 20 lux pour voir la route face à toi. Mais n\'oublie pas que tu peux même trouver des lumières à 1500 lux, voir plus !',
+	},
+	'Question4_correct': {
+		title: 'Correct !',
+		subtitle: 'C\'est bien 20 LUX',
+		body: '',
+	},
+	'Question4_incorrect': {
+		title: 'Incorrect !',
+		subtitle: 'C\'était 20 LUX.',
+		body: '',
+	},
 });
 
 // Define the notifications used in the game
@@ -95,6 +125,15 @@ monogatari.assets ('images', {
 	'chapter1_question2_solution': 'chapter1/chapter1_question2_solution.png',
 	'chapter1_question3': 'chapter1/chapter1_question3.png',
 	'chapter1_question3_solution': 'chapter1/chapter1_question3_solution.png',
+	'chapter1_mostImportant1': 'chapter1/5mostImportant/chapter1_mostImportant1.png',
+	'chapter1_mostImportant2': 'chapter1/5mostImportant/chapter1_mostImportant2.png',
+	'chapter1_mostImportant3': 'chapter1/5mostImportant/chapter1_mostImportant3.png',
+	'chapter1_mostImportant4': 'chapter1/5mostImportant/chapter1_mostImportant4.png',
+	'chapter1_mostImportant5': 'chapter1/5mostImportant/chapter1_mostImportant5.png',
+	'chapter1_apparels1': 'chapter1/apparels/chapter1_apparels1.png',
+	'chapter1_apparels2': 'chapter1/apparels/chapter1_apparels2.png',
+	'chapter1_apparels3': 'chapter1/apparels/chapter1_apparels3.png',
+	'chapter1_apparels4': 'chapter1/apparels/chapter1_apparels4.png',
 });
 
 // Define the backgrounds for each scene.
@@ -294,28 +333,89 @@ monogatari.script ({
 		'p C\'est vrai.',
 		'm Poursuivons.',
 		'm Les lumières sont également très importantes à vélo, surtout lorsqu\'il fait obscure ou que les routes sont mal éclairées.',
-		'm Imagines que tu te trouves sur une route comme illustré ci-dessus, c\'est-à-dire sans lumière de rue, en pleine nuit et seul sur la route.',
+		'm Imagines que tu te trouves sur une route comme illustré ci-dessus, c\'est-à-dire en pleine nuit et seul sur la route.',
 		'show image chapter1_question2 top with fadeIn',
 		{
 			'Choice': {
 				// Question 2
 				'Dialog': 'm De quelle puissance de lumière as-tu au minimum besoin pour y voir assez clair en roulant ?',
-				'100 lumen': {
-					'Text': '100 lumen',
-				},
-				'200 lumen': {
-					'Text': '200 lumen',
+				'10 lux': {
+					'Text': '10 lux',
 					'onChosen': function(){updateCapital()},
 					'onRevert': function(){revertCapital()},
+					'Do': 'show message Question2_correct',
 				},
-				'1000 lumen': {
-					'Text': '1000 lumen',
+				'20 lux': {
+					'Text': '20 lux',
+					'Do': 'show message Question2_incorrect',
+				},
+				'50 lux': {
+					'Text': '50 lux',
+					'Do': 'show message Question2_incorrect',
 				},
 			},
 		},
 		'show image chapter1_question2_solution top',
-		'hide image chapter1_question2',
-		'm Avec une lumière de 200 lux, tu seras capable de voir la route devant toi en pleine nuit. ',
+		'm Avec une lumière de 10 lux, tu seras capable de voir la route devant toi lorsqu\'il fait nuit.',
+		'show image chapter1_question3 right with fadeIn',
+		{
+			'Choice': {
+				// Question 3
+				'Dialog': 'm Et, dans ce nouveau contexte, de quelle puissance as-tu besoin, sachant qu\'il n\'y a aucun éclairage de rue ?',
+				'10 lux': {
+					'Text': '10 lux',
+					'Do': 'show message Question3_incorrect',
+				},
+				'20 lux': {
+					'Text': '20 lux',
+					'onChosen': function(){updateCapital()},
+					'onRevert': function(){revertCapital()},
+					'Do': 'show message Question3_correct',
+				},
+				'50 lux': {
+					'Text': '50 lux',
+					'Do': 'show message Question3_incorrect',
+				},
+			},
+		},
+		'show image chapter1_question3_solution right',
+		'm Avec une lumière de 20 lux, tu seras capable de voir la route devant toi lorsqu\'il fait nuit et qu\'il n\'y pas d\'autres éclairages.',
+		'p Je ne savais pas. Je me rends mieux compte désormais.',
+		'm Oui, et au même titre que les lumières, voici également 5 autres éléments primordiaux à avoir sur son vélo.',
+		'show image chapter1_mostImportant1 on left',
+		'm Le catadioptre rouge arrière.',
+		'show image chapter1_mostImportant2 on left',
+		'hide image chapter1_mostImportant1 on left',
+		'm Le catadioptre blanc avant.',
+		'show image chapter1_mostImportant3 on left',
+		'hide image chapter1_mostImportant2 on left',
+		'm Les freins avant et arrière, qui - je le précises - doivent être entretenus et en bon état en permanence.',
+		'show image chapter1_mostImportant4 on left',
+		'hide image chapter1_mostImportant3 on left',
+		'm Catadioptres jaunes à l\'avant et à l\'arrière des pédales.',
+		'show image chapter1_mostImportant5 on left',
+		'hide image chapter1_mostImportant4 on left',
+		'm Et pour finir, des pneus gonflés et en bon état.',
+		'p Ha oui, effectivement cet équipement me paraît plus que nécessaire !',
+		'm Eh oui, pour terminer, il semble important de mentionner la méthode de l\'oignon pour ce qui est du vestimentaire.',
+		'hide image chapter1_mostImportant5',
+		'hide image chapter1_question3_solution',
+		'hide image chapter1_question2_solution',
+		'show image chapter1_apparels1 on center',
+		'm La première couche d\'habits pour le cycliste sont simplement des sous-vêtements qui vont aider à évacuer l\'humidité. Mais attention, si tu fais du vélo de course et que tu portes un bib, il est connu que tu dois être à poil sous le bib.',
+		'show image chapter1_apparels2 on center',
+		'hide image chapter1_apparels1',
+		'm Ensuite, la deuxième couche sont le maillot et le short, ainsi qu\'une jacket ou polaire lors de fraîches températures.',
+		'show image chapter1_apparels3 on center',
+		'hide image chapter1_apparels2',
+		'm La dernière couche permet de se protéger en cas de vents ou fortes pluies afin de rester au sec et de garder un minimum de confort pendant l\'effort.',
+		'show image chapter1_apparels4 on center',
+		'hide image chapter1_apparels3',
+		'm En cas de besoin, le cycliste peut aussi s\'apprêter de ses plus beaux gants ou surchaussures pour parer au froid des extrémités, et surtout les protéger en cas de chute.',
+		'p Merci pour toutes ces informations, je me sens déjà plus à l\'aise avec le sujet !',
+		'm Avec plaisir. J\'espère que tu feras bon usage de ce que tu as appris !',
+		'hide image chapter1_apparels4',
+		'm Passons maintenant aux code de la route.',
 		'jump Scene4',
 	],
 
@@ -330,6 +430,37 @@ monogatari.script ({
 		'show scene chapter2_background with fadeIn',
 		'show character p interested on left with fadeIn',
 		'show character m front on right with fadeIn',
+		'm Sur la route, il est très important d\'avoir une gestuelle claire et distincte. Tu es d\'accord {{player.name}} ?',
+		'p Oui, bien évidemment.',
+		'm Pour tester tes connaissances, tu vas devoir me dire ce que ces gestes représentent. J\'ai hâte de te voir te tromper hihi !',
+		'p Et qui te dis que je vais me tromper d\'abord ?!',
+		'm C\'est ce que nous allons voir.',
+		{
+			'Choice': {
+				// Question 4
+				'Dialog': '',
+				'10 lux': {
+					'Text': '10 lux',
+					'onChosen': function(){updateCapital()},
+					'onRevert': function(){revertCapital()},
+					'Do': 'show message Question4_correct',
+				},
+				'20 lux': {
+					'Text': '20 lux',
+					'Do': 'show message Question4_incorrect',
+				},
+				'50 lux': {
+					'Text': '50 lux',
+					'Do': 'show message Question4_incorrect',
+				},
+			},
+		},
+
+
+
+
+
+		
 		'jump Scene6',
 	],
 	
