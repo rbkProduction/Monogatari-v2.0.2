@@ -91,7 +91,10 @@ monogatari.assets ('videos', {
 
 // Define the images used in the game.
 monogatari.assets ('images', {
-	
+	'chapter1_question2': 'chapter1/chapter1_question2.png',
+	'chapter1_question2_solution': 'chapter1/chapter1_question2_solution.png',
+	'chapter1_question3': 'chapter1/chapter1_question3.png',
+	'chapter1_question3_solution': 'chapter1/chapter1_question3_solution.png',
 });
 
 // Define the backgrounds for each scene.
@@ -250,31 +253,33 @@ monogatari.script ({
 
 
 	'Scene2': [
-		'show scene chapter1 with fadeIn duration 10s',
+		'show scene chapter1 with fadeIn',
+		'wait 5000',
 		'jump Scene3',
 	],
 	
 	'Scene3': [
 		// Chapter 1
 		'play music game on loop with volume 30',
-		'show scene chapter1_background with fadeIn duration 3s',
+		'show scene chapter1_background with fadeIn',
 		'show character p smiling on left with fadeIn',
 		'show character m smiling on right with fadeIn',
 		'm Avoir un matériel adéquat est primordial à vélo. Que ce soit du port du casque aux accessoires comme la sonnette et le cadenas, tu vas découvrir que ces objets peuvent t\'être utile, voir même te sauver la vie.',
 		'p Oui, effectivement. Quels sont les objets élémentaires dans ce cas ?',
-		'm Typiquement, le casque. Selon toi, est-il obligatoire de porter un casque à vélo ? ',
+		'm Typiquement, le casque.',
 		{
 			'Choice': {
 				// Question 1
+				'Dialog': 'm Selon toi, est-il obligatoire de porter un casque à vélo ?',
 				'Oui': {
 					'Text': 'Oui, absolument !',
 					//'Class': 'choicesButtonsLeft',
-					'show message': 'Question1_incorrect',
+					'Do': 'show message Question1_incorrect',
 				},
 				'Non': {
 					'Text': 'Évidemment que non.. En plus, j\'ai l\'air ridicule avec un casque.',
 					//'Class': 'choicesButtonsCenter',
-					'show message': 'Question1_incorrect',
+					'Do': 'show message Question1_incorrect',
 
 				},
 				'Autre': {
@@ -282,33 +287,34 @@ monogatari.script ({
 					//'Class': 'choicesButtonsRight',
 					'onChosen': function(){updateCapital()},
 					'onRevert': function(){revertCapital()},
-					'show message': 'Question1_correct',
+					'Do': 'show message Question1_correct',
 				},
 			},
 		},
 		'play sound cash',
 		'm Le port du casque, bien que pas obligatoire, peut sauver ta vie dans beaucoup de circonstances.',
-		'm C\'est connu d\'ailleurs.. «Le style vient après la vie» !',
+		'm C\'est connu d\'ailleurs...   « Le style vient après la vie » !',
 		'p C\'est vrai.',
 		'm Poursuivons.',
 		'm Les lumières sont également très importantes à vélo, surtout lorsqu\'il fait obscure ou que les routes sont mal éclairées.',
 		'm Imagines que tu te trouves sur une route comme illustré ci-dessus. De quelle puissance de lumière as-tu au minimum besoin pour y voir assez clair en roulant ?',
+		'show image chapter1_question2',
 		{
 			'Choice': {
 				// Question 2
 				'100 lumen': {
 					'Text': '100 lumen',
-					//'Class': 'choicesButtonsLeft',
+					'Class': 'choicesButtonsLeft',
 				},
-				'300 lumen': {
-					'Text': '300 lumen',
-					//'Class': 'choicesButtonsCenter',
+				'200 lumen': {
+					'Text': '200 lumen',
+					'Class': 'choicesButtonsCenter',
 					'onChosen': function(){updateCapital()},
 					'onRevert': function(){revertCapital()},
 				},
 				'1000 lumen': {
 					'Text': '1000 lumen',
-					//'Class': 'choicesButtonsRight',
+					'Class': 'choicesButtonsRight',
 				},
 			},
 		},
@@ -316,20 +322,22 @@ monogatari.script ({
 	],
 
 	'Scene4': [
-		'show scene chapter2 with fadeIn duration 10s',
+		'show scene chapter2 with fadeIn',
+		'wait 5000',
 		'jump Scene5',
 	],
 
 	'Scene5': [
 		// Chapter 2
-		'show scene chapter2_background with fadeIn duration 3s',
+		'show scene chapter2_background with fadeIn',
 		'show character p interested on left with fadeIn',
 		'show character m front on right with fadeIn',
 		'jump Scene6',
 	],
 	
 	'Scene6': [
-		'show scene chapter3 with fadeIn duration 10s',
+		'show scene chapter3 with fadeIn',
+		'wait 5000',
 		'jump Scene7',
 	],
 
@@ -338,7 +346,7 @@ monogatari.script ({
 		'show scene chapter3_background',
 		'show character p smiling on left with fadeIn',
 		'show character m surprised on right with fadeIn',
-		'jump Scene8',
+		'jump Win',
 	],	
 
 	'Win': [

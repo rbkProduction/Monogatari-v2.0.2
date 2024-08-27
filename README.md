@@ -14,6 +14,11 @@ Chaque étape permet une acquisiton de connaissances supplémentaires sur le vé
 ## Ressources
 
 1. [Le Cyclo - l'Index du Vélo](https://www.lecyclo.com/fr-ch/blogs/conseils/dictionnaire-du-velo#le-cadre)
+2. [TCS - Règles de conduites de base pour les cyclistes](https://www.tcs.ch/fr/tests-conseils/conseils/regles-de-circulation/regles-cyclistes.php#:~:text=Règles%20de%20conduite%20de%20base%20pour%20les%20cyclistes&text=Savoir%20anticiper%20%3A%20roulez%20prudemment%20et,soyez%20prêt%20à%20vous%20arrêter.)
+3. [TCS - La brochure « Guide du Cyclistes »](https://www.tcs.ch/mam/Digital-Media/PDF/Booklets/Guide-du-cycliste_1.pdf)
+4. [TCS - La brochure « La priorité et moi »](https://www.tcs.ch/mam/Verkehrssicherheit/PDF/Booklets/la-priorite-et-moi.pdf)
+5. [ATE - Les signaux routiers](https://www.ate.ch/themes/velo/signaux-routiers)
+
 
 
 ## Autrice
