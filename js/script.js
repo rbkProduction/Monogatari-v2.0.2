@@ -110,6 +110,75 @@ monogatari.action ('message').messages ({
 		subtitle: 'Il faut esquiver un obstacle',
 		body: 'Si tu vois ceci, tu dois te préparer à te déporter sur la droite ou sur la gauche pour éviter la voiture, le piéton ou encore les ralentisseurs sur le bord de la chaussée.',
 	},
+	'Question11_correct': {
+		title: 'Correct !',
+		subtitle: '60 CHF d\'amende',
+		body: 'Si tu grilles un feu rouge, un policier sera en mesure de te facturer 60 CHF afin de te décourager à reproduire la même erreur.',
+	},
+	'Question11_incorrect': {
+		title: 'Incorrect !',
+		subtitle: '60 CHF d\'amende',
+		body: 'Si tu grilles un feu rouge, un policier sera en mesure de te facturer 60 CHF afin de te décourager à reproduire la même erreur.',
+	},
+	'Question12_correct': {
+		title: 'Correct !',
+		subtitle: '30 CHF d\'amende',
+		body: 'Ne pas s\'arrêter à un stop est passible d\'une amende de 30 CHF. La prochaine, tu y réfléchiras à deux fois avant de passer parce que tu as la flemme de t\'arrêter.',
+	},
+	'Question12_incorrect': {
+		title: 'Incorrect !',
+		subtitle: '30 CHF d\'amende',
+		body: 'Ne pas s\'arrêter à un stop est passible d\'une amende de 30 CHF. La prochaine, tu y réfléchiras à deux fois avant de passer parce que tu as la flemme de t\'arrêter.',
+	},
+	'Question13_correct': {
+		title: 'Correct !',
+		subtitle: 'Sanctionné !',
+		body: 'Eh oui, ce n\'est pas parce que tu n\'es pas un véhicule motorisé que cela te laisse le droit de rouler sur le trottoir et de déranger les piétons.',
+	},
+	'Question13_incorrect': {
+		title: 'Incorrect !',
+		subtitle: 'Sanctionné !',
+		body: 'Eh oui, ce n\'est pas parce que tu n\'es pas un véhicule motorisé que cela te laisse le droit de rouler sur le trottoir et de déranger les piétons.',
+	},'Question14_correct': {
+		title: 'Correct !',
+		subtitle: '30 CHF',
+		body: 'Tout comme ne pas s\'arrêter au stop, rouler dans une zone piétonne est passible de 30 CHF d\'amende. Ça a peut-être l\'air minime comme coûts, mais ça, plus ça, plus ça, tu vas finir par sponsoriser l\'état si tu continues comme ça.',
+	},
+	'Question14_incorrect': {
+		title: 'Incorrect !',
+		subtitle: '30 CHF',
+		body: 'Tout comme ne pas s\'arrêter au stop, rouler dans une zone piétonne est passible de 30 CHF d\'amende. Ça a peut-être l\'air minime comme coûts, mais ça, plus ça, plus ça, tu vas finir par sponsoriser l\'état si tu continues comme ça.',
+	},
+	'Question15_correct': {
+		title: 'Correct !',
+		subtitle: 'Rouler de nuit sans feu',
+		body: 'Ça t\'étonnes peut-être, mais rouler de nuit sans feu alors que la route n\'est pas éclairée te reviendra à 60 CHF d\'amende. Ne pas accorder la priorité à un passage pour piéton est sanctionné à hauteur de 40 CHF, et ne pas utiliser la piste cyclable te coûtera 30 CHF.',
+	},
+	'Question15_incorrect': {
+		title: 'Incorrect !',
+		subtitle: 'Rouler de nuit sans feu',
+		body: 'Ça t\'étonnes peut-être, mais rouler de nuit sans feu alors que la route n\'est pas éclairée te reviendra à 60 CHF d\'amende. Ne pas accorder la priorité à un passage pour piéton est sanctionné à hauteur de 40 CHF, et ne pas utiliser la piste cyclable te coûtera 30 CHF.',
+	},
+	'Question16_correct': {
+		title: 'Correct !',
+		subtitle: 'C\'est 40 CHF sur les routes éclairées',
+		body: 'Bon, rouler sans lumière, je te le déconseille vivement, mais tant qu\'à faire, tu sais mainteant que tu as meilleur temps de le faire en ville, là où c\'est un minimum éclairé de nuit.',
+	},
+	'Question16_incorrect': {
+		title: 'Incorrect !',
+		subtitle: 'C\'est 40 CHF sur les routes éclairées',
+		body: 'Bon, rouler sans lumière, je te le déconseille vivement, mais tant qu\'à faire, tu sais mainteant que tu as meilleur temps de le faire en ville, là où c\'est un minimum éclairé de nuit.',
+	},
+	'Question17_correct': {
+		title: 'Correct !',
+		subtitle: '20 CHF',
+		body: 'Bon, ça c\'est si tu veux faire ton malin devant les autres et frimer sur le fait que tu arrives à rouler sans les mains. Mais qui dit sans les mains... dit sans les dents.',
+	},
+	'Question17_incorrect': {
+		title: 'Incorrect !',
+		subtitle: '20 CHF',
+		body: 'Bon, ça c\'est si tu veux faire ton malin devant les autres et frimer sur le fait que tu arrives à rouler sans les mains. Mais qui dit sans les mains... dit sans les dents.',
+	},
 });
 
 // Define the notifications used in the game
@@ -214,7 +283,7 @@ monogatari.assets ('scenes', {
 	'chapter2_background': 'chapter2_background.svg',
 	'chapter3': 'chapter3.svg',
 	'chapter3_background': 'chapter3_background.svg',
-	'black': 'blackBackground.svg',
+	'ending': 'ending.svg',
 });
 
 
@@ -505,7 +574,7 @@ monogatari.script ({
 		{
 			'Choice': {
 				// Question 4
-				'Dialog': 'Que signifie ce signe ?',
+				'Dialog': 'm Que signifie ce signe ?',
 				'Do': 'show image chapter2_question4 top with fadeIn',
 				'1': {
 					'Text': 'S\'arrêter / se stopper',
@@ -527,7 +596,7 @@ monogatari.script ({
 		{
 			'Choice': {
 				// Question 5
-				'Dialog': 'Que veut dire ce geste ?',
+				'Dialog': 'm Que veut dire ce geste ?',
 				'Do': 'show image chapter2_question5 top with fadeIn',
 				'1': {
 					'Text': 'Avertir de la présence d\'un objet sur la chaussée',
@@ -549,7 +618,7 @@ monogatari.script ({
 		{
 			'Choice': {
 				// Question 6
-				'Dialog': 'Que veut dire ce geste ?',
+				'Dialog': 'm Que veut dire ce geste ?',
 				'Do': 'show image chapter2_question6 top with fadeIn',
 				'1': {
 					'Text': 'S\'arrêter / se stopper',
@@ -571,7 +640,7 @@ monogatari.script ({
 		{
 			'Choice': {
 				// Question 7
-				'Dialog': 'Que veut dire ce geste ?',
+				'Dialog': 'm Que veut dire ce geste ?',
 				'Do': 'show image chapter2_question7 top with fadeIn',
 				'1': {
 					'Text': 'Indiquer que le cycliste a crevé',
@@ -593,7 +662,7 @@ monogatari.script ({
 		{
 			'Choice': {
 				// Question 8
-				'Dialog': 'Que veut dire ce geste ?',
+				'Dialog': 'm Que veut dire ce geste ?',
 				'Do': 'show image chapter2_question8 top with fadeIn',
 				'1': {
 					'Text': 'Indiquer que la présence d\'un dos d\'âne',
@@ -615,7 +684,7 @@ monogatari.script ({
 		{
 			'Choice': {
 				// Question 9
-				'Dialog': 'Que veut dire ce geste ?',
+				'Dialog': 'm Que veut dire ce geste ?',
 				'Do': 'show image chapter2_question9 top with fadeIn',
 				'1': {
 					'Text': 'Prévenir le peloton que quelquechose entrave la route',
@@ -637,7 +706,7 @@ monogatari.script ({
 		{
 			'Choice': {
 				// Question 10
-				'Dialog': 'Que veut dire ce geste ?',
+				'Dialog': 'm Que veut dire ce geste ?',
 				'Do': 'show image chapter2_question10 top with fadeIn',
 				'1': {
 					'Text': 'Prévenir la personne derrière qu\'il faut qu\'elle aille à l\'avant du peloton',
@@ -658,9 +727,8 @@ monogatari.script ({
 		'hide image chapter2_question10',
 		'm Ha-ha ce n\'est pas si simple que cela hein ? Mais tu t\'en es bien sorti ! Bravo.',
 		'p Merci, je dois admettre que j\'ai dû me creuser les meninges.',
-		'm Maintenant que nous avons abordé la gestuelle à adopter en roulant en peloton, passons aux panneaux de signalisation.',
-
-
+		'm Maintenant que nous avons abordé la gestuelle à adopter en roulant en peloton, passons aux infractions.',
+		'p C\'est parti, je suis prêt !',
 		'jump Scene6',
 	],
 	
@@ -672,29 +740,156 @@ monogatari.script ({
 
 	'Scene7': [
 		// Chapter 3
-		'show scene chapter3_background',
+		'show scene chapter3_background with fadeIn',
 		'show character p smiling on left with fadeIn',
 		'show character m surprised on right with fadeIn',
-		'jump Win',
+		'm Je vais maintenant te poser une série de questions sur les infractions et ce qu\'elles engendrent.',
+		{
+			'Choice': {
+				// Question 11
+				'Dialog': 'm Quel est le montant d\'une amende lorsque tu grilles un feu rouge ?',
+				'1': {
+					'Text': '80 CHF',
+					'Do': 'show message Question11_incorrect',
+				},
+				'2': {
+					'Text': '60 CHF',
+					'onChosen': function(){updateCapital()},
+					'onRevert': function(){revertCapital()},
+					'Do': 'show message Question11_correct',
+				},
+				'3': {
+					'Text': '40 CHF',
+					'Do': 'show message Question11_incorrect',
+				},
+			},
+		},
+		{
+			'Choice': {
+				// Question 12
+				'Dialog': 'm Quel est le montant d\'une amende lorsque tu ne t\'arrêtes pas complètement à un stop ?',
+				'1': {
+					'Text': '30 CHF',
+					'onChosen': function(){updateCapital()},
+					'onRevert': function(){revertCapital()},
+					'Do': 'show message Question12_correct',
+				},
+				'2': {
+					'Text': '50 CHF',
+					'Do': 'show message Question12_incorrect',
+				},
+				'3': {
+					'Text': '70 CHF',
+					'Do': 'show message Question12_incorrect',
+				},
+			},
+		},
+		{
+			'Choice': {
+				// Question 13
+				'Dialog': 'm Est-ce que tu peux être sanctionner si tu roules sur le trottoir ?',
+				'1': {
+					'Text': 'Oui',
+					'onChosen': function(){updateCapital()},
+					'onRevert': function(){revertCapital()},
+					'Do': 'show message Question13_correct',
+				},
+				'2': {
+					'Text': 'Non',
+					'Do': 'show message Question13_incorrect',
+				},
+			},
+		},
+		{
+			'Choice': {
+				// Question 14
+				'Dialog': 'm Combien peux-tu payer pour avoir roulé dans une zone piétonne ?',
+				'1': {
+					'Text': '50 CHF',
+					'Do': 'show message Question14_incorrect',
+				},
+				'2': {
+					'Text': '30 CHF',
+					'onChosen': function(){updateCapital()},
+					'onRevert': function(){revertCapital()},
+					'Do': 'show message Question14_correct',
+				},
+				'3': {
+					'Text': '15 CHF',
+					'Do': 'show message Question14_incorrect',
+				},
+			},
+		},
+		{
+			'Choice': {
+				// Question 15
+				'Dialog': 'Quelle infraction est considéré plus grave que l\'autres ?',
+				'1': {
+					'Text': 'Ne pas utiliser la piste cyclable',
+					'Do': 'show message Question15_incorrect',
+				},
+				'2': {
+					'Text': 'Ne pas accorder la priorité à un passage pour piéton',
+					'Do': 'show message Question15_incorrect',
+				},
+				'3': {
+					'Text': 'Circuler sans feu sur une route non-éclairée de nuit',
+					'onChosen': function(){updateCapital()},
+					'onRevert': function(){revertCapital()},
+					'Do': 'show message Question15_correct',
+				},
+			},
+		},
+		{
+			'Choice': {
+				// Question 16
+				'Dialog': 'Tu sais maintenant que tu seras amendé 60 CHF si tu circules sans feu sur une route non-éclairées de nuit. Penses-tu que le même tarif s\'applique à une route éclairée ?',
+				'1': {
+					'Text': 'Oui',
+					'Do': 'show message Question16_incorrect',
+				},
+				'2': {
+					'Text': 'Non',
+					'onChosen': function(){updateCapital()},
+					'onRevert': function(){revertCapital()},
+					'Do': 'show message Question16_correct',
+				},
+			},
+		},
+		{
+			'Choice': {
+				// Question 17
+				'Dialog': 'Combien seras-tu amendé si tu lâches complètement ton guidon en roulant ?',
+				'1': {
+					'Text': '10 CHF',
+					'Do': 'show message Question17_incorrect',
+				},
+				'2': {
+					'Text': '20 CHF',
+					'onChosen': function(){updateCapital()},
+					'onRevert': function(){revertCapital()},
+					'Do': 'show message Question17_correct',
+				},
+				'3': {
+					'Text': '80 CHF',
+					'Do': 'show message Question17_incorrect',
+				},
+			},
+		},
+		'jump End',
 	],	
 
-	'Win': [
+	'End': [
 		'stop music game',
 		'play music end on loop with volume 50',
-		'show scene bikeFinal',
-		'show character p smiling on left with fadeIn',
-		'centered Bravo, tu as réussi à respecter ton budget et tu es repart avec ton propre vélo.',
-		'end',
-	],
-
-	'Lose': [
-		'stop music game',
-		'play music end on loop with volume 50',
-		'show scene storefront',
-		'show character p shocked on left with fadeIn',
-		'centered Aïe, tu as dépassé le budget... ',
-		'centered ce n\'est pas si simple de maintenir un budget lorsqu\'on nous présente tous ces beaux produits ! ',
-		'centered T\'en fais pas. Le but, c\'est que tu aies acquéris des connaissances sur le montage d\'un vélo de route.',
+		'show scene ending',
+		'show character p smiling on left',
+		'show character m smiling on right',
+		'm Bravo, tu as répondu à toutes les questions que j\'avais préparé pour toi ! Félicitations.',
+		'p Merci, j\'ai apprécié apprendre de nouvelles choses et cela ne m\'a pas fait de mal de revoir certaines règles. Je pense que je suis à jour au niveau de la sécurité routière à vélo.',
+		'm Tu es parti avec un capital risque de 100% et en répondant aux questions, tu as réussi à le descendre à {{currentCapital}} %.',
+		'm Mais n\'oublie jamais, bien que tu sois préparé et prévenu des dangers de la route, tu ne peux jamais faire confiance aux autres. Tu dois constamment être vigileant, puisque les erreurs sont vite arrivées. Sois prudent et à bientôt !',
+		'p Merci Marie, à bientôt !', 
 		'end',
 	],
 
