@@ -205,30 +205,30 @@ monogatari.script ({
 		'show scene homepage',
 		'play music intro with volume 30',
 		'show notification Welcome',
-		{
-			'Input': {
-				'Text': 'Quel est ton nom ?',
-				'Validation': function (input) {
-					return input.trim ().length > 0;
-				},
-				'Save': function (input) {
-					this.storage ({
-						player: {
-							name: input
-						}
-					});
-					return true;
-				},
-				'Revert': function () {
-					this.storage ({
-						player: {
-							name: ''
-						}
-					});
-				},
-				'Warning': 'Il faut entrer un nom.'
-			}
-		},
+		//{
+		//	'Input': {
+		//		'Text': 'Quel est ton nom ?',
+		//		'Validation': function (input) {
+		//			return input.trim ().length > 0;
+		//		},
+		//		'Save': function (input) {
+		//			this.storage ({
+		//				player: {
+		//					name: input
+		//				}
+		//			});
+		//			return true;
+		//		},
+		//		'Revert': function () {
+		//			this.storage ({
+		//				player: {
+		//					name: ''
+		//				}
+		//			});
+		//		},
+		//		'Warning': 'Il faut entrer un nom.'
+		//	}
+		//},
 		'centered Bonjour {{player.name}}.',
 		'centered Safe ride est un jeu de prévention sur les codes de la route et les infractions auquel tu peux être sujet lors de tes sorties à vélo.',
 		'centered Tu vas découvrir les gestes de sécurité à appliquer, ainsi que les r\éflexes à adopter pour une bonne conduite sur la route.',
@@ -273,18 +273,15 @@ monogatari.script ({
 				'Dialog': 'm Selon toi, est-il obligatoire de porter un casque à vélo ?',
 				'Oui': {
 					'Text': 'Oui, absolument !',
-					//'Class': 'choicesButtonsLeft',
 					'Do': 'show message Question1_incorrect',
 				},
 				'Non': {
 					'Text': 'Évidemment que non.. En plus, j\'ai l\'air ridicule avec un casque.',
-					//'Class': 'choicesButtonsCenter',
 					'Do': 'show message Question1_incorrect',
 
 				},
 				'Autre': {
 					'Text': 'Oui, mais uniquement pour les vélos électriques.',
-					//'Class': 'choicesButtonsRight',
 					'onChosen': function(){updateCapital()},
 					'onRevert': function(){revertCapital()},
 					'Do': 'show message Question1_correct',
@@ -297,27 +294,28 @@ monogatari.script ({
 		'p C\'est vrai.',
 		'm Poursuivons.',
 		'm Les lumières sont également très importantes à vélo, surtout lorsqu\'il fait obscure ou que les routes sont mal éclairées.',
-		'm Imagines que tu te trouves sur une route comme illustré ci-dessus. De quelle puissance de lumière as-tu au minimum besoin pour y voir assez clair en roulant ?',
-		'show image chapter1_question2',
+		'm Imagines que tu te trouves sur une route comme illustré ci-dessus, c\'est-à-dire sans lumière de rue, en pleine nuit et seul sur la route.',
+		'show image chapter1_question2 top with fadeIn',
 		{
 			'Choice': {
 				// Question 2
+				'Dialog': 'm De quelle puissance de lumière as-tu au minimum besoin pour y voir assez clair en roulant ?',
 				'100 lumen': {
 					'Text': '100 lumen',
-					'Class': 'choicesButtonsLeft',
 				},
 				'200 lumen': {
 					'Text': '200 lumen',
-					'Class': 'choicesButtonsCenter',
 					'onChosen': function(){updateCapital()},
 					'onRevert': function(){revertCapital()},
 				},
 				'1000 lumen': {
 					'Text': '1000 lumen',
-					'Class': 'choicesButtonsRight',
 				},
 			},
 		},
+		'show image chapter1_question2_solution top',
+		'hide image chapter1_question2',
+		'm Avec une lumière de 200 lux, tu seras capable de voir la route devant toi en pleine nuit. ',
 		'jump Scene4',
 	],
 
