@@ -12,12 +12,12 @@ monogatari.action ('message').messages ({
 	},
 	'Question1_correct': {
 		title: 'Correct !',
-		subtitle: 'Le porte du casque n\'est pas obligatoire.',
+		subtitle: 'Le port du casque n\'est pas obligatoire',
 		body: 'Effectivement, le port du casque n\'est pas obligatoire pour les vélos, bien que vivement recommandé ! Ne serait-ce que pour montrer l\'exemple aux plus jeunes. Il est revanche obligé de le porter pour les personnes qui se déplacent en vélo électrique.',
 	},
 	'Question1_incorrect': {
 		title: 'Incorrect !',
-		subtitle: 'Le porte du casque n\'est pas obligatoire.',
+		subtitle: 'Le port du casque n\'est pas obligatoire',
 		body: 'Effectivement, le port du casque n\'est pas obligatoire pour les vélos, bien que vivement recommandé ! Ne serait-ce que pour montrer l\'exemple aux plus jeunes. Il est revanche obligé de le porter pour les personnes qui se déplacent en vélo électrique.',
 	},
 	'Question2_correct': {
@@ -27,7 +27,7 @@ monogatari.action ('message').messages ({
 	},
 	'Question2_incorrect': {
 		title: 'Incorrect !',
-		subtitle: 'C\'était 10 LUX.',
+		subtitle: 'C\'était 10 LUX',
 		body: 'Une lumière de 10 lux est suffisante pour te permettra de voir la route devant toi en pleine nuit.',
 	},
 	'Question3_correct': {
@@ -37,18 +37,78 @@ monogatari.action ('message').messages ({
 	},
 	'Question3_incorrect': {
 		title: 'Incorrect !',
-		subtitle: 'C\'était 20 LUX.',
+		subtitle: 'C\'était 20 LUX',
 		body: 'Si il n\'y aucun autre éclairage présent sur la route, alors il te faut au moins 20 lux pour voir la route face à toi. Mais n\'oublie pas que tu peux même trouver des lumières à 1500 lux, voir plus !',
 	},
 	'Question4_correct': {
 		title: 'Correct !',
-		subtitle: 'C\'est bien 20 LUX',
-		body: '',
+		subtitle: 'Cela indique de réduire la vitesse',
+		body: 'Il faut étendre le bras avec la paume vers le sol et faire des mouvements courts avec la main en haut et en bas. Ce mouvement doit être fait à l\'avance pour que les autres cyclistes aient le temps de réduire leur vitesse progressivement.',
 	},
 	'Question4_incorrect': {
 		title: 'Incorrect !',
-		subtitle: 'C\'était 20 LUX.',
-		body: '',
+		subtitle: 'Cela indique de réduire la vitesse',
+		body: 'Il faut étendre le bras avec la paume vers le sol et faire des mouvements courts avec la main en haut et en bas. Ce mouvement doit être fait à l\'avance pour que les autres cyclistes aient le temps de réduire leur vitesse progressivement.',
+	},
+	'Question5_correct': {
+		title: 'Correct !',
+		subtitle: 'Cela signifie tourner à gauche',
+		body: 'Ce geste est l\'équivalent du clignotant pour les véhicules à moteur. Tu dois étendre le bras dans la direction où tu souhaites tourner. À droite pour indiquer que tu tournes à droite. À gauche, pour indiquer que tu tournes à gauche.',
+	},
+	'Question5_incorrect': {
+		title: 'Incorrect !',
+		subtitle: 'Cela signifie tourner à gauche',
+		body: 'Ce geste est l\'équivalent du clignotant pour les véhicules à moteur. Tu dois étendre le bras dans la direction où tu souhaites tourner. À droite pour indiquer que tu tournes à droite. À gauche, pour indiquer que tu tournes à gauche.',
+	},
+	'Question6_correct': {
+		title: 'Correct !',
+		subtitle: 'Il faut s\'arrêter',
+		body: 'Quand tu vois ce geste, cela veut dire que tu dois réduire ta vitesse et t\'arrêter dès que possible pour éviter toute collision ou accident. Pour ce geste, tu dois lever la main au-dessus de la tête avec la paume vers l\'avant.',
+	},
+	'Question6_incorrect': {
+		title: 'Incorrect !',
+		subtitle: 'Il faut s\'arrêter',
+		body: 'Quand tu vois ce geste, cela veut dire que tu dois réduire ta vitesse et t\'arrêter dès que possible pour éviter toute collision ou accident. Pour ce geste, tu dois lever la main au-dessus de la tête avec la paume vers l\'avant.',
+	},
+	'Question7_correct': {
+		title: 'Correct !',
+		subtitle: 'Des objets gênent la chaussée',
+		body: 'Si tu vois un cycliste faire ce geste, il t\'indique que des objets bloquent la chaussée et que tu dois les éviter, comme une branche d\'arbre, un caillou ou un déchet par exemple.',
+	},
+	'Question7_incorrect': {
+		title: 'Incorrect !',
+		subtitle: 'Des objets gênent la chaussée',
+		body: 'Si tu vois un cycliste faire ce geste, il t\'indique que des objets bloquent la chaussée et que tu dois les éviter, comme une branche d\'arbre, un caillou ou un déchet par exemple.',
+	},
+	'Question8_correct': {
+		title: 'Correct !',
+		subtitle: 'C\'est un dos-d\'âne',
+		body: 'Et oui, si tu as trouvé celui-ci, tu es déjà bien calé en gestuelle. Ce mouvement indique un dos-d\'âne ou nid-de-poule. Pour ce faire, tu dois étendre le bras et faire des mouvements ascendants plusieurs fois. Ou alors, d\'étendre les coudes et de les mouvoir à la fois, comme une poule ferait avec ses ailes.',
+	},
+	'Question8_incorrect': {
+		title: 'Incorrect !',
+		subtitle: 'C\'est un dos-d\'âne',
+		body: 'Et oui, si tu as trouvé celui-ci, tu es déjà bien calé en gestuelle. Ce mouvement indique un dos-d\'âne ou nid-de-poule. Pour ce faire, tu dois étendre le bras et faire des mouvements ascendants plusieurs fois. Ou alors, d\'étendre les coudes et de les mouvoir à la fois, comme une poule ferait avec ses ailes.',
+	},
+	'Question9_correct': {
+		title: 'Correct !',
+		subtitle: 'La route est sale',
+		body: 'En effet, cela veut dire que la route est sale et couverte de sable, de sel, d\'huile ou autes saletés qui pourraient provoquent une perte de traction de ton vélo, et résulter en chute.',
+	},
+	'Question9_incorrect': {
+		title: 'Incorrect !',
+		subtitle: 'La route est sale',
+		body: 'En effet, cela veut dire que la route est sale et couverte de sable, de sel, d\'huile ou autes saletés qui pourraient provoquent une perte de traction de ton vélo, et résulter en chute.',
+	},
+	'Question10_correct': {
+		title: 'Correct !',
+		subtitle: 'Il faut esquiver un obstacle',
+		body: 'Si tu vois ceci, tu dois te préparer à te déporter sur la droite ou sur la gauche pour éviter la voiture, le piéton ou encore les ralentisseurs sur le bord de la chaussée.',
+	},
+	'Question10_incorrect': {
+		title: 'Incorrect !',
+		subtitle: 'Il faut esquiver un obstacle',
+		body: 'Si tu vois ceci, tu dois te préparer à te déporter sur la droite ou sur la gauche pour éviter la voiture, le piéton ou encore les ralentisseurs sur le bord de la chaussée.',
 	},
 });
 
@@ -134,6 +194,13 @@ monogatari.assets ('images', {
 	'chapter1_apparels2': 'chapter1/apparels/chapter1_apparels2.png',
 	'chapter1_apparels3': 'chapter1/apparels/chapter1_apparels3.png',
 	'chapter1_apparels4': 'chapter1/apparels/chapter1_apparels4.png',
+	'chapter2_question4': 'chapter2/gestures/chapter2_question4.png',
+	'chapter2_question5': 'chapter2/gestures/chapter2_question5.png',
+	'chapter2_question6': 'chapter2/gestures/chapter2_question6.png',
+	'chapter2_question7': 'chapter2/gestures/chapter2_question7.png',
+	'chapter2_question8': 'chapter2/gestures/chapter2_question8.png',
+	'chapter2_question9': 'chapter2/gestures/chapter2_question9.png',
+	'chapter2_question10': 'chapter2/gestures/chapter2_question10.png',
 });
 
 // Define the backgrounds for each scene.
@@ -438,29 +505,162 @@ monogatari.script ({
 		{
 			'Choice': {
 				// Question 4
-				'Dialog': '',
-				'10 lux': {
-					'Text': '10 lux',
+				'Dialog': 'Que signifie ce signe ?',
+				'Do': 'show image chapter2_question4 top with fadeIn',
+				'1': {
+					'Text': 'S\'arrêter / se stopper',
+					'Do': 'show message Question4_incorrect',
+				},
+				'2': {
+					'Text': 'Réduire la vitesse',
 					'onChosen': function(){updateCapital()},
 					'onRevert': function(){revertCapital()},
 					'Do': 'show message Question4_correct',
 				},
-				'20 lux': {
-					'Text': '20 lux',
-					'Do': 'show message Question4_incorrect',
-				},
-				'50 lux': {
-					'Text': '50 lux',
+				'3': {
+					'Text': 'Saluer un autre cycliste',
 					'Do': 'show message Question4_incorrect',
 				},
 			},
 		},
+		'hide image chapter2_question4',
+		{
+			'Choice': {
+				// Question 5
+				'Dialog': 'Que veut dire ce geste ?',
+				'Do': 'show image chapter2_question5 top with fadeIn',
+				'1': {
+					'Text': 'Avertir de la présence d\'un objet sur la chaussée',
+					'Do': 'show message Question5_incorrect',
+				},
+				'2': {
+					'Text': 'Tourner à gauche',
+					'onChosen': function(){updateCapital()},
+					'onRevert': function(){revertCapital()},
+					'Do': 'show message Question5_correct',
+				},
+				'3': {
+					'Text': 'Indiquer qu\'une voiture dépasse',
+					'Do': 'show message Question5_incorrect',
+				},
+			},
+		},
+		'hide image chapter2_question5',
+		{
+			'Choice': {
+				// Question 6
+				'Dialog': 'Que veut dire ce geste ?',
+				'Do': 'show image chapter2_question6 top with fadeIn',
+				'1': {
+					'Text': 'S\'arrêter / se stopper',
+					'onChosen': function(){updateCapital()},
+					'onRevert': function(){revertCapital()},
+					'Do': 'show message Question6_correct',
+				},
+				'2': {
+					'Text': 'Saluer un autre cycliste',
+					'Do': 'show message Question6_incorrect',
+				},
+				'3': {
+					'Text': 'Avertir au peloton qu\'il faut gentimment freiner',
+					'Do': 'show message Question6_incorrect',
+				},
+			},
+		},
+		'hide image chapter2_question6',
+		{
+			'Choice': {
+				// Question 7
+				'Dialog': 'Que veut dire ce geste ?',
+				'Do': 'show image chapter2_question7 top with fadeIn',
+				'1': {
+					'Text': 'Indiquer que le cycliste a crevé',
+					'Do': 'show message Question7_incorrect',
+				},
+				'2': {
+					'Text': 'Avertir que le feu passe au rouge',
+					'Do': 'show message Question7_incorrect',
+				},
+				'3': {
+					'Text': 'Avertir de la présence d\'un objet sur la chaussée',
+					'onChosen': function(){updateCapital()},
+					'onRevert': function(){revertCapital()},
+					'Do': 'show message Question7_correct',
+				},
+			},
+		},
+		'hide image chapter2_question7',
+		{
+			'Choice': {
+				// Question 8
+				'Dialog': 'Que veut dire ce geste ?',
+				'Do': 'show image chapter2_question8 top with fadeIn',
+				'1': {
+					'Text': 'Indiquer que la présence d\'un dos d\'âne',
+					'onChosen': function(){updateCapital()},
+					'onRevert': function(){revertCapital()},
+					'Do': 'show message Question8_correct',
+				},
+				'2': {
+					'Text': 'Indiquer qu\'il va falloir dépasser un cycliste qui est plus lent',
+					'Do': 'show message Question8_incorrect',
+				},
+				'3': {
+					'Text': 'Avertir que le feu passe au rouge',
+					'Do': 'show message Question8_incorrect',
+				},
+			},
+		},
+		'hide image chapter2_question8',
+		{
+			'Choice': {
+				// Question 9
+				'Dialog': 'Que veut dire ce geste ?',
+				'Do': 'show image chapter2_question9 top with fadeIn',
+				'1': {
+					'Text': 'Prévenir le peloton que quelquechose entrave la route',
+					'Do': 'show message Question9_incorrect',
+				},
+				'2': {
+					'Text': 'Avertir qu\'il y a bientôt un rond-point',
+					'Do': 'show message Question9_incorrect',
+				},
+				'3': {
+					'Text': 'Indiquer que la route est sale',
+					'onChosen': function(){updateCapital()},
+					'onRevert': function(){revertCapital()},
+					'Do': 'show message Question9_correct',
+				},
+			},
+		},
+		'hide image chapter2_question9',
+		{
+			'Choice': {
+				// Question 10
+				'Dialog': 'Que veut dire ce geste ?',
+				'Do': 'show image chapter2_question10 top with fadeIn',
+				'1': {
+					'Text': 'Prévenir la personne derrière qu\'il faut qu\'elle aille à l\'avant du peloton',
+					'Do': 'show message Question10_incorrect',
+				},
+				'2': {
+					'Text': 'Indiquer qu\il est bientôt le moment de faire une pause sur le côté',
+					'Do': 'show message Question10_incorrect',
+				},
+				'3': {
+					'Text': 'Prévenir le peloton qu\'il doit se rabattre pour éviter un obstacle',
+					'onChosen': function(){updateCapital()},
+					'onRevert': function(){revertCapital()},
+					'Do': 'show message Question10_correct',
+				},
+			},
+		},
+		'hide image chapter2_question10',
+		'm Ha-ha ce n\'est pas si simple que cela hein ? Mais tu t\'en es bien sorti ! Bravo.',
+		'p Merci, je dois admettre que j\'ai dû me creuser les meninges.',
+		'm Maintenant que nous avons abordé la gestuelle à adopter en roulant en peloton, passons aux panneaux de signalisation.',
 
 
-
-
-
-		
 		'jump Scene6',
 	],
 	
