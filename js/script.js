@@ -574,11 +574,11 @@ monogatari.script ({
 		'm Pour tester tes connaissances, tu vas devoir me dire ce que ces gestes représentent. J\'ai hâte de te voir te tromper hihi !',
 		'p Et qui te dis que je vais me tromper d\'abord ?!',
 		'm C\'est ce que nous allons voir.',
+		'show image chapter2_question4 top with fadeIn',
 		{
 			'Choice': {
 				// Question 4
 				'Dialog': 'm Que signifie ce signe ?',
-				'Do': 'show image chapter2_question4 top with fadeIn',
 				'1': {
 					'Text': 'S\'arrêter / se stopper',
 					'Do': 'show message Question4_incorrect',
@@ -596,11 +596,11 @@ monogatari.script ({
 			},
 		},
 		'hide image chapter2_question4',
+		'show image chapter2_question5 top with fadeIn',
 		{
 			'Choice': {
 				// Question 5
 				'Dialog': 'm Que veut dire ce geste ?',
-				'Do': 'show image chapter2_question5 top with fadeIn',
 				'1': {
 					'Text': 'Avertir de la présence d\'un objet sur la chaussée',
 					'Do': 'show message Question5_incorrect',
@@ -618,11 +618,11 @@ monogatari.script ({
 			},
 		},
 		'hide image chapter2_question5',
+		'show image chapter2_question6 top with fadeIn',
 		{
 			'Choice': {
 				// Question 6
 				'Dialog': 'm Que veut dire ce geste ?',
-				'Do': 'show image chapter2_question6 top with fadeIn',
 				'1': {
 					'Text': 'S\'arrêter / se stopper',
 					'onChosen': function(){updateCapital()},
@@ -640,11 +640,11 @@ monogatari.script ({
 			},
 		},
 		'hide image chapter2_question6',
+		'show image chapter2_question7 top with fadeIn',
 		{
 			'Choice': {
 				// Question 7
 				'Dialog': 'm Que veut dire ce geste ?',
-				'Do': 'show image chapter2_question7 top with fadeIn',
 				'1': {
 					'Text': 'Indiquer que le cycliste a crevé',
 					'Do': 'show message Question7_incorrect',
@@ -662,11 +662,11 @@ monogatari.script ({
 			},
 		},
 		'hide image chapter2_question7',
+		'show image chapter2_question8 top with fadeIn',
 		{
 			'Choice': {
 				// Question 8
 				'Dialog': 'm Que veut dire ce geste ?',
-				'Do': 'show image chapter2_question8 top with fadeIn',
 				'1': {
 					'Text': 'Indiquer que la présence d\'un dos d\'âne',
 					'onChosen': function(){updateCapital()},
@@ -684,11 +684,11 @@ monogatari.script ({
 			},
 		},
 		'hide image chapter2_question8',
+		'show image chapter2_question9 top with fadeIn',
 		{
 			'Choice': {
 				// Question 9
 				'Dialog': 'm Que veut dire ce geste ?',
-				'Do': 'show image chapter2_question9 top with fadeIn',
 				'1': {
 					'Text': 'Prévenir le peloton que quelquechose entrave la route',
 					'Do': 'show message Question9_incorrect',
@@ -706,11 +706,11 @@ monogatari.script ({
 			},
 		},
 		'hide image chapter2_question9',
+		'show image chapter2_question10 top with fadeIn',
 		{
 			'Choice': {
 				// Question 10
 				'Dialog': 'm Que veut dire ce geste ?',
-				'Do': 'show image chapter2_question10 top with fadeIn',
 				'1': {
 					'Text': 'Prévenir la personne derrière qu\'il faut qu\'elle aille à l\'avant du peloton',
 					'Do': 'show message Question10_incorrect',
