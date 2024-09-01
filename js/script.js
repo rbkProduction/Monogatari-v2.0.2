@@ -360,37 +360,36 @@ monogatari.script ({
 	'Start': [
 		'show scene homepage',
 		'play music intro with volume 30',
+		{
+			'Input': {
+				'Text': 'Quel est ton nom ?',
+				'Validation': function(input) {
+					return input.trim ().length > 0;
+				},
+				'Save': function(input) {
+					this.storage ({
+						player: {
+							name: input
+						}
+					});
+					return true;
+				},
+				'Revert': function () {
+					this.storage ({
+						player: {
+							name: ''
+						}
+					});
+				},
+				'Warning': 'Merci d\'entrer un nom'
+			}
+		},
 		'show notification Welcome',
-		//{
-		//	'Input': {
-		//		'Text': 'Quel est ton nom ?',
-		//		'Validation': function (input) {
-		//			return input.trim ().length > 0;
-		//		},
-		//		'Save': function (input) {
-		//			this.storage ({
-		//				player: {
-		//					name: input
-		//				}
-		//			});
-		//			return true;
-		//		},
-		//		'Revert': function () {
-		//			this.storage ({
-		//				player: {
-		//					name: ''
-		//				}
-		//			});
-		//		},
-		//		'Warning': 'Il faut entrer un nom.'
-		//	}
-		//},
 		'centered Bonjour {{player.name}}.',
 		'centered Safe ride est un jeu de prévention sur les codes de la route et les infractions auquel tu peux être sujet lors de tes sorties à vélo, que ce soit en solo ou en peloton.',
 		'centered Tu vas découvrir les gestes de sécurité à appliquer, ainsi que les réflexes à adopter pour une bonne conduite sur la route.',
 		'centered Tu vas commencer le jeu avec un capital risque de 100%.',
 		'centered Réponds correctement au maximum de questions et tu feras baisser ton capital risque. Essaie de finir le jeu avec le pourcentage le plus faible !',
-		'stop music intro',
 		'jump Scene1',
 	],
 
@@ -403,6 +402,7 @@ monogatari.script ({
 		'm Ça tombe bien, je suis experte en la matière ! Voyons tout de suite si on doit te considérer comme un danger sur la voie publique.',
 		'show character m smiling on right',
 		'show character p front on left',
+		'stop music intro',
 		'jump Scene2',
 	],
 
@@ -411,12 +411,12 @@ monogatari.script ({
 		'show scene chapter1 with fadeIn',
 		'play sound pedals',
 		'wait 4000',
-		'stop sound pedals',
 		'jump Scene3',
 	],
 	
 	'Scene3': [
 		// Chapter 1
+		'stop sound pedals',
 		'play music chapter1 on loop with volume 20',
 		'show scene chapter1_background with fadeIn',
 		'show character p smiling on left with fadeIn',
@@ -473,6 +473,7 @@ monogatari.script ({
 		},
 		'm Oui, regarde.',
 		'show image chapter1_question2_solution top',
+		'hide image chapter1_question2',
 		'm Comme le montre l\'image désormais, une lumière de 100 lumen te permettra de voir la route devant toi lorsqu\'il fait nuit.',
 		'show image chapter1_question3 right with fadeIn',
 		{
@@ -496,31 +497,29 @@ monogatari.script ({
 			},
 		},
 		'show image chapter1_question3_solution right',
+		'hide image chapter1_question3',
 		'm Comme illustré sur l\'image, avec une lumière de 200 lumen, tu seras capable de voir la route devant toi lorsqu\'il fait nuit et qu\'il n\'y pas d\'autres éclairages.',
 		'p Ha oui, je me rends mieux compte désormais.',
 		'm Oui, et au même titre que les lumières, voici également 5 autres éléments primordiaux à avoir sur son vélo.',
 		'show image chapter1_mostImportant1 on left',
 		'm Le catadioptre rouge arrière.',
 		'show image chapter1_mostImportant2 on left',
-		'hide image chapter1_mostImportant1 on left',
+		'hide image chapter1_mostImportant1',
 		'm Le catadioptre blanc avant.',
 		'show image chapter1_mostImportant3 on left',
-		'hide image chapter1_mostImportant2 on left',
+		'hide image chapter1_mostImportant2',
 		'm Les freins avant et arrière, qui doivent être entretenus et en bon état en permanence.',
 		'show image chapter1_mostImportant4 on left',
-		'hide image chapter1_mostImportant3 on left',
+		'hide image chapter1_mostImportant3',
 		'm Les catadioptres jaunes à l\'avant et à l\'arrière des pédales.',
 		'show image chapter1_mostImportant5 on left',
-		'hide image chapter1_mostImportant4 on left',
+		'hide image chapter1_mostImportant4',
 		'm Et pour finir, des pneus gonflés et en bon état.',
 		'p Effectivement, cet équipement me paraît plus que nécessaire !',
-		'hide image chapter1_mostImportant4',
-		'hide image chapter1_mostImportant4',
 		'hide image chapter1_question2_solution',
-		'm Pour terminer, il faut mentionner la méthode de l\'oignon pour ce qui est du vestimentaire.',
+		'hide image chapter1_question3_solution',
 		'hide image chapter1_mostImportant5',
-		'hide image chapter1_question3_solution',
-		'hide image chapter1_question3_solution',
+		'm Pour terminer, il faut mentionner la méthode de l\'oignon pour ce qui est du vestimentaire.',
 		'show image chapter1_apparels1 on center',
 		'm La première couche d\'habits pour le cycliste sont simplement des sous-vêtements qui vont aider à évacuer l\'humidité. Par contre, quand tu fais du vélo de course et que tu portes un bib, le sous-vêtement est vivement déconseillé.',
 		'show image chapter1_apparels2 on center',
@@ -543,12 +542,12 @@ monogatari.script ({
 		'show scene chapter2 with fadeIn',
 		'play sound pedals',
 		'wait 4000',
-		'stop sound pedals',
 		'jump Scene5',
 	],
 
 	'Scene5': [
 		// Chapter 2
+		'stop sound pedals',
 		'stop music chapter1',
 		'play music chapter2 on loop with volume 20',
 		'show scene chapter2_background with fadeIn',
@@ -723,12 +722,12 @@ monogatari.script ({
 		'show scene chapter3 with fadeIn',
 		'play sound pedals',
 		'wait 4000',
-		'stop sound pedals',
 		'jump Scene7',
 	],
 
 	'Scene7': [
 		// Chapter 3
+		'stop sound pedals',
 		'stop music chapter2',
 		'play music chapter3 on loop with volume 20',
 		'show scene chapter3_background with fadeIn',
@@ -863,7 +862,7 @@ monogatari.script ({
 		'show character m smiling on right',
 		'm Bravo, tu as répondu à toutes les questions que j\'avais préparé pour toi ! Félicitations.',
 		'p Merci, j\'ai apprécié apprendre de nouvelles choses et cela ne m\'a pas fait de mal de revoir certaines règles. Je pense que je suis à jour au niveau de la sécurité routière à vélo.',
-		'm Tu es parti avec un capital risque de 100% et en répondant aux questions, tu as réussi à le descendre à {{currentCapital}} %.',
+		'm Tu es parti avec un capital risque de 100% et en répondant aux questions, tu as réussi à le descendre à {{newCapital}} %.',
 		'm Mais n\'oublie jamais, bien que tu sois préparé et prévenu des dangers de la route, tu ne peux jamais faire confiance aux autres. Tu dois constamment être vigileant, puisque les erreurs sont vite arrivées. Sois prudent et à bientôt !',
 		'p Merci Marie, à bientôt !', 
 		'end',
