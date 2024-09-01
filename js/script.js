@@ -358,33 +358,24 @@ function updateCapital() {
 monogatari.script ({
 	// The game starts here.
 	'Start': [
+		'show notification Welcome',
 		'show scene homepage',
-		'play music intro with volume 30',
+		'play music intro with volume 20',
 		{
 			'Input': {
 				'Text': 'Quel est ton nom ?',
-				'Validation': function(input) {
+				'Validation': (input) => {
 					return input.trim ().length > 0;
 				},
-				'Save': function(input) {
-					this.storage ({
-						player: {
-							name: input
-						}
-					});
-					return true;
+				'Save': (input) => {
+					monogatari.storage ({ player: { name: input}});
 				},
-				'Revert': function () {
-					this.storage ({
-						player: {
-							name: ''
-						}
-					});
+				'Revert': () => {
+					monogatari.storage ({ player: { name: ''}});
 				},
 				'Warning': 'Merci d\'entrer un nom'
 			}
 		},
-		'show notification Welcome',
 		'centered Bonjour {{player.name}}.',
 		'centered Safe ride est un jeu de prévention sur les codes de la route et les infractions auquel tu peux être sujet lors de tes sorties à vélo, que ce soit en solo ou en peloton.',
 		'centered Tu vas découvrir les gestes de sécurité à appliquer, ainsi que les réflexes à adopter pour une bonne conduite sur la route.',
