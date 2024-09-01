@@ -327,8 +327,8 @@ monogatari.characters ({
 let capital = 100;
 // Function to upload the statBar
 function uploadStatBar() {
-	const statBar = document.getElementById("statBar");
-	const capitalSpan = document.getElementById("capital");
+	let statBar = document.getElementById("progressBar");
+	let capitalSpan = document.getElementById("capital");
 	// Upload the display of the amount spent
 	capitalSpan.textContent = capital;
 	// Upload the value of the statBar
@@ -409,8 +409,9 @@ monogatari.script ({
 
 	'Scene2': [
 		'show scene chapter1 with fadeIn',
-		'play sound pedals with fade 3',
+		'play sound pedals',
 		'wait 4000',
+		'stop sound pedals',
 		'jump Scene3',
 	],
 	
@@ -470,6 +471,7 @@ monogatari.script ({
 				},
 			},
 		},
+		'm Oui, regarde.',
 		'show image chapter1_question2_solution top',
 		'm Comme le montre l\'image désormais, une lumière de 100 lumen te permettra de voir la route devant toi lorsqu\'il fait nuit.',
 		'show image chapter1_question3 right with fadeIn',
@@ -539,8 +541,9 @@ monogatari.script ({
 
 	'Scene4': [
 		'show scene chapter2 with fadeIn',
-		'play sound pedals with fade 3',
+		'play sound pedals',
 		'wait 4000',
+		'stop sound pedals',
 		'jump Scene5',
 	],
 
@@ -718,8 +721,9 @@ monogatari.script ({
 	
 	'Scene6': [
 		'show scene chapter3 with fadeIn',
-		'play sound pedals with fade 3',
+		'play sound pedals',
 		'wait 4000',
+		'stop sound pedals',
 		'jump Scene7',
 	],
 

@@ -124,7 +124,7 @@ main-menu{
 	right: 10px;
 	width: 300px;
 	border: 3px black;
-	background-color: sienna;
+	background-color: white;
 	opacity: 0.8;
 }
 
@@ -145,12 +145,6 @@ div [data-content=wrapper] {
 	flex-direction: row;
 	top: 150px;
 };
-
-/* Style of the disabeld button (because of the Clickable option) */
-[disabled] {
-	opacity: .5;
-};
-
 
 /* Choice Buttons style */
 [data-component="choice-container"] button {
