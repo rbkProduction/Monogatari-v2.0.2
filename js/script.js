@@ -328,9 +328,9 @@ let capital = 100;
 // Function to upload the statBar
 function uploadStatBar() {
 	const statBar = document.getElementById("statBar");
-	const capitalSpan = document.getElementById("capital")
+	const capitalSpan = document.getElementById("capital");
 	// Upload the value of the statBar
-	statBar.value = capital
+	statBar.value = capital;
 	// Upload the display of the amount spent
 	capitalSpan.textContent = capital;
 	// Upload in the user's storage
@@ -340,20 +340,18 @@ function uploadStatBar() {
 // Function to add an expense
 function revertCapital() {
 	// Add the amount of risk to be added to the score
-	capital += 5;
+	capital += 5.88235294;
 	// Upload the stat bar
-	uploadStatBar();
+	uploadStatBar(capital);
 	return true;
 };
 
 // Function to substract an expense
 function updateCapital() {
 	// Add the amount of risk to be deducted to the score
-	capital -= 5;
+	capital -= 5.88235294;
 	// Upload the stat bar
-	uploadStatBar();
-	// Updating the last answer's score of the player in the storage
-	monogatari.storage ().lastCapitalDeducted = 5;
+	uploadStatBar(capital);
 };
 
 /*
@@ -405,9 +403,8 @@ monogatari.script ({
 		//	}
 		//},
 		'centered Bonjour {{player.name}}.',
-		'centered Safe ride est un jeu de prévention sur les codes de la route et les infractions auquel tu peux être sujet lors de tes sorties à vélo.',
-		'centered Tu vas découvrir les gestes de sécurité à appliquer, ainsi que les r\éflexes à adopter pour une bonne conduite sur la route.',
-		'centered Marie va t\'accompagner pendant le jeu et te donnera toute sorte de conseil ou commentaire pour améliorer ton score.',
+	'centered Safe ride est un jeu de prévention sur les codes de la route et les infractions auquel tu peux être sujet lors de tes sorties à vélo, que ce soit en solo ou en peloton.',
+		'centered Tu vas découvrir les gestes de sécurité à appliquer, ainsi que les réflexes à adopter pour une bonne conduite sur la route.',
 		'centered Tu vas commencer le jeu avec un capital risque de 100%.',
 		'centered Réponds correctement au maximum de questions et tu feras baisser ton capital risque. Essaie de finir le jeu avec le pourcentage le plus faible !',
 		'stop music intro',
@@ -418,9 +415,9 @@ monogatari.script ({
 		'show scene street with fadeIn',
 		'show character p rightSide on left with fadeIn',
 		'show character m leftSide on right with fadeIn',
-		'm Bonjour toi, j\'ai entendu dire que tu souhaitais en savoir plus sur le vélo et la sécurité à appliquer pour rouler en toute sérénité.',
+		'm Bonjour, j\'ai entendu dire que tu souhaitais en savoir plus sur la sécurité à vélo.',
 		'p C\'est exact. Je crois que cela ne me ferait pas de mal de revoir les bases.',
-		'm Ça tombe bien, je suis experte en la matière ! Voyons tout de suite si on doit te considérer comme un danger sur la voie publique ou si tu peux rouler en toute confiance.',
+		'm Ça tombe bien, je suis experte en la matière ! Voyons tout de suite si on doit te considérer comme un danger sur la voie publique.',
 		'show character m smiling on right',
 		'show character p front on left',
 		'jump Scene2',
@@ -429,8 +426,8 @@ monogatari.script ({
 
 	'Scene2': [
 		'show scene chapter1 with fadeIn',
-		'wait 5000',
 		'play sound pedals',
+		'wait 4000',
 		'jump Scene3',
 	],
 	
@@ -465,12 +462,11 @@ monogatari.script ({
 			},
 		},
 		'm Le port du casque, bien que pas obligatoire, peut sauver ta vie dans beaucoup de circonstances.',
-		'm C\'est connu d\'ailleurs...   « Le style vient après la vie » !',
 		'p C\'est vrai.',
-		'm Poursuivons.',
+		'm Continuous.',
 		'm Les lumières sont également très importantes à vélo, surtout lorsqu\'il fait obscure ou que les routes sont mal éclairées.',
-		'm Imagines que tu te trouves sur une route comme illustré ci-dessus, c\'est-à-dire en pleine nuit et seul sur la route.',
 		'show image chapter1_question2 top with fadeIn',
+		'm Imagines que tu te trouves sur une route comme illustré ci-dessus, c\'est-à-dire en pleine nuit et seul sur la route.',
 		{
 			'Choice': {
 				// Question 2
@@ -492,12 +488,12 @@ monogatari.script ({
 			},
 		},
 		'show image chapter1_question2_solution top',
-		'm Avec une lumière de 10 lux, tu seras capable de voir la route devant toi lorsqu\'il fait nuit.',
+		'm Comme le montre l\'image désormais, une lumière de 10 lux te permettra de voir la route devant toi lorsqu\'il fait nuit.',
 		'show image chapter1_question3 right with fadeIn',
 		{
 			'Choice': {
 				// Question 3
-				'Dialog': 'm Et, dans ce nouveau contexte, de quelle puissance as-tu besoin, sachant qu\'il n\'y a aucun éclairage de rue ?',
+				'Dialog': 'm L\'image de droite ne contient aucun éclairage de nuit. De quelle puissance de lumière as-tu besoin ?',
 				'10 lux': {
 					'Text': '10 lux',
 					'Do': 'show message Question3_incorrect',
@@ -515,8 +511,8 @@ monogatari.script ({
 			},
 		},
 		'show image chapter1_question3_solution right',
-		'm Avec une lumière de 20 lux, tu seras capable de voir la route devant toi lorsqu\'il fait nuit et qu\'il n\'y pas d\'autres éclairages.',
-		'p Je ne savais pas. Je me rends mieux compte désormais.',
+		'm Comme illustré sur l\'image, avec une lumière de 20 lux, tu seras capable de voir la route devant toi lorsqu\'il fait nuit et qu\'il n\'y pas d\'autres éclairages.',
+		'p Ha oui, je me rends mieux compte désormais.',
 		'm Oui, et au même titre que les lumières, voici également 5 autres éléments primordiaux à avoir sur son vélo.',
 		'show image chapter1_mostImportant1 on left',
 		'm Le catadioptre rouge arrière.',
@@ -525,31 +521,31 @@ monogatari.script ({
 		'm Le catadioptre blanc avant.',
 		'show image chapter1_mostImportant3 on left',
 		'hide image chapter1_mostImportant2 on left',
-		'm Les freins avant et arrière, qui - je le précises - doivent être entretenus et en bon état en permanence.',
+		'm Les freins avant et arrière, qui doivent être entretenus et en bon état en permanence.',
 		'show image chapter1_mostImportant4 on left',
 		'hide image chapter1_mostImportant3 on left',
-		'm Catadioptres jaunes à l\'avant et à l\'arrière des pédales.',
+		'm Les catadioptres jaunes à l\'avant et à l\'arrière des pédales.',
 		'show image chapter1_mostImportant5 on left',
 		'hide image chapter1_mostImportant4 on left',
 		'm Et pour finir, des pneus gonflés et en bon état.',
-		'p Ha oui, effectivement cet équipement me paraît plus que nécessaire !',
-		'm Eh oui, pour terminer, il semble important de mentionner la méthode de l\'oignon pour ce qui est du vestimentaire.',
+		'p Effectivement, cet équipement me paraît plus que nécessaire !',
+		'm Pour terminer, il faut mentionner la méthode de l\'oignon pour ce qui est du vestimentaire.',
 		'hide image chapter1_mostImportant5',
 		'hide image chapter1_question3_solution',
 		'hide image chapter1_question2_solution',
 		'show image chapter1_apparels1 on center',
-		'm La première couche d\'habits pour le cycliste sont simplement des sous-vêtements qui vont aider à évacuer l\'humidité. Mais attention, si tu fais du vélo de course et que tu portes un bib, il est connu que tu dois être à poil sous le bib.',
+		'm La première couche d\'habits pour le cycliste sont simplement des sous-vêtements qui vont aider à évacuer l\'humidité. Par contre, quand tu fais du vélo de course et que tu portes un bib, le sous-vêtement est vivement déconseillé.',
 		'show image chapter1_apparels2 on center',
 		'hide image chapter1_apparels1',
-		'm Ensuite, la deuxième couche sont le maillot et le short, ainsi qu\'une jacket ou polaire lors de fraîches températures.',
+		'm Ensuite, la deuxième couche est le maillot, ainsi que le short, avec une jacket ou une polaire lors de fraîches températures.',
 		'show image chapter1_apparels3 on center',
 		'hide image chapter1_apparels2',
 		'm La dernière couche permet de se protéger en cas de vents ou fortes pluies afin de rester au sec et de garder un minimum de confort pendant l\'effort.',
 		'show image chapter1_apparels4 on center',
 		'hide image chapter1_apparels3',
-		'm En cas de besoin, le cycliste peut aussi s\'apprêter de ses plus beaux gants ou surchaussures pour parer au froid des extrémités, et surtout les protéger en cas de chute.',
-		'p Merci pour toutes ces informations, je me sens déjà plus à l\'aise avec le sujet !',
-		'm Avec plaisir. J\'espère que tu feras bon usage de ce que tu as appris !',
+		'm En cas de besoin, le cycliste peut aussi s\'apprêter de gants ou surchaussures pour parer au froid des extrémités, et surtout les protéger en cas de chute.',
+		'p Merci pour toutes ces informations, je me sens déjà plus à l\'aise avec le sujet.',
+		'm De rien. J\'espère que tu feras bon usage de ce que tu as appris !',
 		'hide image chapter1_apparels4',
 		'm Passons maintenant à la gestuelle des cyclistes, principalement lorsqu\'ils roulent en peloton.',
 		'jump Scene4',
@@ -557,8 +553,8 @@ monogatari.script ({
 
 	'Scene4': [
 		'show scene chapter2 with fadeIn',
-		'wait 5000',
 		'play sound pedals',
+		'wait 4000',
 		'jump Scene5',
 	],
 
@@ -571,9 +567,8 @@ monogatari.script ({
 		'show character m front on right with fadeIn',
 		'm Sur la route, il est très important d\'avoir une gestuelle claire et distincte. Tu es d\'accord {{player.name}} ?',
 		'p Oui, bien évidemment.',
-		'm Pour tester tes connaissances, tu vas devoir me dire ce que ces gestes représentent. J\'ai hâte de te voir te tromper hihi !',
-		'p Et qui te dis que je vais me tromper d\'abord ?!',
-		'm C\'est ce que nous allons voir.',
+		'm Pour tester tes connaissances, tu vas devoir me dire ce que ces gestes représentent. J\'ai hâte de te voir te tromper !',
+		'p Je relève le défi.',
 		'show image chapter2_question4 top with fadeIn',
 		{
 			'Choice': {
@@ -600,7 +595,7 @@ monogatari.script ({
 		{
 			'Choice': {
 				// Question 5
-				'Dialog': 'm Que veut dire ce geste ?',
+				'Dialog': 'm Que veut dire celui-ci ?',
 				'1': {
 					'Text': 'Avertir de la présence d\'un objet sur la chaussée',
 					'Do': 'show message Question5_incorrect',
@@ -622,7 +617,7 @@ monogatari.script ({
 		{
 			'Choice': {
 				// Question 6
-				'Dialog': 'm Que veut dire ce geste ?',
+				'Dialog': 'm Et ce geste ?',
 				'1': {
 					'Text': 'S\'arrêter / se stopper',
 					'onChosen': function(){updateCapital()},
@@ -666,9 +661,9 @@ monogatari.script ({
 		{
 			'Choice': {
 				// Question 8
-				'Dialog': 'm Que veut dire ce geste ?',
+				'Dialog': 'm Peux-tu deviner celui-là ?',
 				'1': {
-					'Text': 'Indiquer que la présence d\'un dos d\'âne',
+					'Text': 'Indiquer la présence d\'un dos d\'âne',
 					'onChosen': function(){updateCapital()},
 					'onRevert': function(){revertCapital()},
 					'Do': 'show message Question8_correct',
@@ -688,13 +683,13 @@ monogatari.script ({
 		{
 			'Choice': {
 				// Question 9
-				'Dialog': 'm Que veut dire ce geste ?',
+				'Dialog': 'm Bien. Et que veut dire ce geste ?',
 				'1': {
-					'Text': 'Prévenir le peloton que quelquechose entrave la route',
+					'Text': 'Prévenir le peloton qu\'un objet entrave la route',
 					'Do': 'show message Question9_incorrect',
 				},
 				'2': {
-					'Text': 'Avertir qu\'il y a bientôt un rond-point',
+					'Text': 'Avertir qu\'il y a un rond-point',
 					'Do': 'show message Question9_incorrect',
 				},
 				'3': {
@@ -710,13 +705,13 @@ monogatari.script ({
 		{
 			'Choice': {
 				// Question 10
-				'Dialog': 'm Que veut dire ce geste ?',
+				'Dialog': 'm Et pour finir, que signifie ce geste ?',
 				'1': {
-					'Text': 'Prévenir la personne derrière qu\'il faut qu\'elle aille à l\'avant du peloton',
+					'Text': 'Prévenir la personne derrière qu\'il doit aller à l\'avant du peloton',
 					'Do': 'show message Question10_incorrect',
 				},
 				'2': {
-					'Text': 'Indiquer qu\il est bientôt le moment de faire une pause sur le côté',
+					'Text': 'Indiquer qu\'il faut s\'arrêter sur le côté',
 					'Do': 'show message Question10_incorrect',
 				},
 				'3': {
@@ -728,17 +723,17 @@ monogatari.script ({
 			},
 		},
 		'hide image chapter2_question10',
-		'm Ha-ha ce n\'est pas si simple que cela hein ? Mais tu t\'en es bien sorti ! Bravo.',
-		'p Merci, je dois admettre que j\'ai dû me creuser les meninges.',
+		'm Tu t\'en es bien sorti ! Bravo.',
+		'p Merci.',
 		'm Maintenant que nous avons abordé la gestuelle à adopter en roulant en peloton, passons aux infractions.',
-		'p C\'est parti, je suis prêt !',
+		'p Je suis prêt !',
 		'jump Scene6',
 	],
 	
 	'Scene6': [
 		'show scene chapter3 with fadeIn',
-		'wait 5000',
 		'play sound pedals',
+		'wait 4000',
 		'jump Scene7',
 	],
 
@@ -755,7 +750,7 @@ monogatari.script ({
 				// Question 11
 				'Dialog': 'm Quel est le montant d\'une amende lorsque tu grilles un feu rouge ?',
 				'1': {
-					'Text': '80 CHF',
+					'Text': '100 CHF',
 					'Do': 'show message Question11_incorrect',
 				},
 				'2': {
@@ -765,7 +760,7 @@ monogatari.script ({
 					'Do': 'show message Question11_correct',
 				},
 				'3': {
-					'Text': '40 CHF',
+					'Text': '20 CHF',
 					'Do': 'show message Question11_incorrect',
 				},
 			},
@@ -781,11 +776,11 @@ monogatari.script ({
 					'Do': 'show message Question12_correct',
 				},
 				'2': {
-					'Text': '50 CHF',
+					'Text': '70 CHF',
 					'Do': 'show message Question12_incorrect',
 				},
 				'3': {
-					'Text': '70 CHF',
+					'Text': '110 CHF',
 					'Do': 'show message Question12_incorrect',
 				},
 			},
@@ -809,9 +804,9 @@ monogatari.script ({
 		{
 			'Choice': {
 				// Question 14
-				'Dialog': 'm Combien peux-tu payer pour avoir roulé dans une zone piétonne ?',
+				'Dialog': 'm Combien risques-tu de payer si tu roules dans une zone piétonne ?',
 				'1': {
-					'Text': '50 CHF',
+					'Text': '10 CHF',
 					'Do': 'show message Question14_incorrect',
 				},
 				'2': {
@@ -829,7 +824,7 @@ monogatari.script ({
 		{
 			'Choice': {
 				// Question 15
-				'Dialog': 'Quelle infraction est considéré plus grave que l\'autres ?',
+				'Dialog': 'Laquelle de ces infractions est considérée plus grave que les autres ?',
 				'1': {
 					'Text': 'Ne pas utiliser la piste cyclable',
 					'Do': 'show message Question15_incorrect',
@@ -867,7 +862,7 @@ monogatari.script ({
 				// Question 17
 				'Dialog': 'Combien seras-tu amendé si tu lâches complètement ton guidon en roulant ?',
 				'1': {
-					'Text': '10 CHF',
+					'Text': '60 CHF',
 					'Do': 'show message Question17_incorrect',
 				},
 				'2': {

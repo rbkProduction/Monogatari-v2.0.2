@@ -7,6 +7,5 @@ monogatari.storage ({
 	},
 	currentCapital: 100,
 	newCapital: 0,
-	lastCapitalDeducted: 0,
 	overBudget: true,
 });
