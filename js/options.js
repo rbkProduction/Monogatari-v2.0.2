@@ -20,7 +20,7 @@ monogatari.settings({
 	'Name': 'Safe Ride',
 
 	// The version of your game in semantic versioning (https://semver.org/).
-	'Version': '0.1.0',
+	'Version': '0.2.0',
 
 	// Initial Label *
 	'Label': 'Start',
@@ -136,7 +136,7 @@ monogatari.settings({
 monogatari.preferences ({
 
 	// Initial Language for Multilanguage Games or for the Default GUI Language.
-	'Language': 'English',
+	'Language': 'Français',
 
 	// Initial Volumes from 0.0 to 1.
 	'Volume': {

@@ -22,23 +22,23 @@ monogatari.action ('message').messages ({
 	},
 	'Question2_correct': {
 		title: 'Correct !',
-		subtitle: 'C\'est bien 10 LUX',
-		body: 'Une lumière de 10 lux est suffisante pour te permettra de voir la route devant toi en pleine nuit.',
+		subtitle: 'C\'est bien 100 lumen',
+		body: 'Une lumière de 100 lumen est suffisante pour te permettra de voir la route devant toi en pleine nuit.',
 	},
 	'Question2_incorrect': {
 		title: 'Incorrect !',
-		subtitle: 'C\'était 10 LUX',
-		body: 'Une lumière de 10 lux est suffisante pour te permettra de voir la route devant toi en pleine nuit.',
+		subtitle: 'C\'était 100 lumen',
+		body: 'Une lumière de 100 lumen est suffisante pour te permettra de voir la route devant toi en pleine nuit.',
 	},
 	'Question3_correct': {
 		title: 'Correct !',
-		subtitle: 'C\'est bien 20 LUX',
-		body: 'Si il n\'y aucun autre éclairage présent sur la route, alors il te faut au moins 20 lux pour voir la route face à toi. Mais n\'oublie pas que tu peux même trouver des lumières à 1500 lux, voir plus !',
+		subtitle: 'C\'est bien 200 lumen',
+		body: 'Si il n\'y aucun autre éclairage présent sur la route, alors il te faut au moins 200 lumen pour voir la route face à toi. Mais n\'oublie pas que tu peux même trouver des lumières à 1500 lumen, voir plus !',
 	},
 	'Question3_incorrect': {
 		title: 'Incorrect !',
-		subtitle: 'C\'était 20 LUX',
-		body: 'Si il n\'y aucun autre éclairage présent sur la route, alors il te faut au moins 20 lux pour voir la route face à toi. Mais n\'oublie pas que tu peux même trouver des lumières à 1500 lux, voir plus !',
+		subtitle: 'C\'était 200 lumen',
+		body: 'Si il n\'y aucun autre éclairage présent sur la route, alors il te faut au moins 200 lumen pour voir la route face à toi. Mais n\'oublie pas que tu peux même trouver des lumières à 1500 lumen, voir plus !',
 	},
 	'Question4_correct': {
 		title: 'Correct !',
@@ -123,12 +123,12 @@ monogatari.action ('message').messages ({
 	'Question12_correct': {
 		title: 'Correct !',
 		subtitle: '30 CHF d\'amende',
-		body: 'Ne pas s\'arrêter à un stop est passible d\'une amende de 30 CHF. La prochaine, tu y réfléchiras à deux fois avant de passer parce que tu as la flemme de t\'arrêter.',
+		body: 'Ne pas s\'arrêter à un stop est passible d\'une amende de 30 CHF. La prochaine fois, tu y réfléchiras à deux fois avant de passer parce que tu as la flemme de t\'arrêter.',
 	},
 	'Question12_incorrect': {
 		title: 'Incorrect !',
 		subtitle: '30 CHF d\'amende',
-		body: 'Ne pas s\'arrêter à un stop est passible d\'une amende de 30 CHF. La prochaine, tu y réfléchiras à deux fois avant de passer parce que tu as la flemme de t\'arrêter.',
+		body: 'Ne pas s\'arrêter à un stop est passible d\'une amende de 30 CHF. La prochaine fois, tu y réfléchiras à deux fois avant de passer parce que tu as la flemme de t\'arrêter.',
 	},
 	'Question13_correct': {
 		title: 'Correct !',
@@ -172,12 +172,12 @@ monogatari.action ('message').messages ({
 	'Question17_correct': {
 		title: 'Correct !',
 		subtitle: '20 CHF',
-		body: 'Bon, ça c\'est si tu veux faire ton malin devant les autres et frimer sur le fait que tu arrives à rouler sans les mains. Mais qui dit sans les mains... dit sans les dents.',
+		body: 'Bon, ça c\'est si tu veux faire ton malin devant les autres et frimer. Mais qui dit sans les mains... dit sans les dents.',
 	},
 	'Question17_incorrect': {
 		title: 'Incorrect !',
 		subtitle: '20 CHF',
-		body: 'Bon, ça c\'est si tu veux faire ton malin devant les autres et frimer sur le fait que tu arrives à rouler sans les mains. Mais qui dit sans les mains... dit sans les dents.',
+		body: 'Bon, ça c\'est si tu veux faire ton malin devant les autres et frimer. Mais qui dit sans les mains... dit sans les dents.',
 	},
 });
 
@@ -329,10 +329,10 @@ let capital = 100;
 function uploadStatBar() {
 	const statBar = document.getElementById("statBar");
 	const capitalSpan = document.getElementById("capital");
-	// Upload the value of the statBar
-	statBar.value = capital;
 	// Upload the display of the amount spent
 	capitalSpan.textContent = capital;
+	// Upload the value of the statBar
+	statBar.value = capital;
 	// Upload in the user's storage
 	monogatari.storage ().newCapital = capital;
 };
@@ -340,7 +340,7 @@ function uploadStatBar() {
 // Function to add an expense
 function revertCapital() {
 	// Add the amount of risk to be added to the score
-	capital += 5.88235294;
+	capital += 6.25;
 	// Upload the stat bar
 	uploadStatBar(capital);
 	return true;
@@ -349,27 +349,10 @@ function revertCapital() {
 // Function to substract an expense
 function updateCapital() {
 	// Add the amount of risk to be deducted to the score
-	capital -= 5.88235294;
+	capital -= 6.25;
 	// Upload the stat bar
 	uploadStatBar(capital);
 };
-
-/*
-// OLD FUNCTION - Function to substract an expense
-function substractExpense(amount) {
-	// Add the amount of the expense to the total of expenses
-	capital -= amount;
-	// Upload the stat bar
-	uploadStatBar();
-	return true;
-
-	// Function to limit the choices depending on the expenses
-	if (capital > 100){
-		monogatari.storage ().overBudget = false;
-	};
-	return true;
-};
-*/
 
 
 monogatari.script ({
@@ -403,7 +386,7 @@ monogatari.script ({
 		//	}
 		//},
 		'centered Bonjour {{player.name}}.',
-	'centered Safe ride est un jeu de prévention sur les codes de la route et les infractions auquel tu peux être sujet lors de tes sorties à vélo, que ce soit en solo ou en peloton.',
+		'centered Safe ride est un jeu de prévention sur les codes de la route et les infractions auquel tu peux être sujet lors de tes sorties à vélo, que ce soit en solo ou en peloton.',
 		'centered Tu vas découvrir les gestes de sécurité à appliquer, ainsi que les réflexes à adopter pour une bonne conduite sur la route.',
 		'centered Tu vas commencer le jeu avec un capital risque de 100%.',
 		'centered Réponds correctement au maximum de questions et tu feras baisser ton capital risque. Essaie de finir le jeu avec le pourcentage le plus faible !',
@@ -426,7 +409,7 @@ monogatari.script ({
 
 	'Scene2': [
 		'show scene chapter1 with fadeIn',
-		'play sound pedals',
+		'play sound pedals with fade 3',
 		'wait 4000',
 		'jump Scene3',
 	],
@@ -437,8 +420,8 @@ monogatari.script ({
 		'show scene chapter1_background with fadeIn',
 		'show character p smiling on left with fadeIn',
 		'show character m smiling on right with fadeIn',
-		'm Avoir un matériel adéquat est primordial à vélo. Que ce soit du port du casque aux accessoires comme la sonnette et le cadenas, tu vas découvrir que ces objets peuvent t\'être utile, voir même te sauver la vie.',
-		'p Oui, effectivement. Quels sont les objets élémentaires dans ce cas ?',
+		'm Avoir un matériel adéquat est primordial à vélo. Tu vas te souvenir que cela peut t\'être utile, voir même te sauver la vie.',
+		'p Oui, effectivement. Peux-tu me donner un exemple ?',
 		'm Typiquement, le casque.',
 		{
 			'Choice': {
@@ -471,47 +454,47 @@ monogatari.script ({
 			'Choice': {
 				// Question 2
 				'Dialog': 'm De quelle puissance de lumière as-tu au minimum besoin pour y voir assez clair en roulant ?',
-				'10 lux': {
-					'Text': '10 lux',
+				'10 lumen': {
+					'Text': '100 lumen',
 					'onChosen': function(){updateCapital()},
 					'onRevert': function(){revertCapital()},
 					'Do': 'show message Question2_correct',
 				},
-				'20 lux': {
-					'Text': '20 lux',
+				'20 lumen': {
+					'Text': '200 lumen',
 					'Do': 'show message Question2_incorrect',
 				},
-				'50 lux': {
-					'Text': '50 lux',
+				'50 lumen': {
+					'Text': '500 lumen',
 					'Do': 'show message Question2_incorrect',
 				},
 			},
 		},
 		'show image chapter1_question2_solution top',
-		'm Comme le montre l\'image désormais, une lumière de 10 lux te permettra de voir la route devant toi lorsqu\'il fait nuit.',
+		'm Comme le montre l\'image désormais, une lumière de 100 lumen te permettra de voir la route devant toi lorsqu\'il fait nuit.',
 		'show image chapter1_question3 right with fadeIn',
 		{
 			'Choice': {
 				// Question 3
 				'Dialog': 'm L\'image de droite ne contient aucun éclairage de nuit. De quelle puissance de lumière as-tu besoin ?',
-				'10 lux': {
-					'Text': '10 lux',
+				'100 lumen': {
+					'Text': '100 lumen',
 					'Do': 'show message Question3_incorrect',
 				},
-				'20 lux': {
-					'Text': '20 lux',
+				'200 lumen': {
+					'Text': '200 lumen',
 					'onChosen': function(){updateCapital()},
 					'onRevert': function(){revertCapital()},
 					'Do': 'show message Question3_correct',
 				},
-				'50 lux': {
-					'Text': '50 lux',
+				'500 lumen': {
+					'Text': '500 lumen',
 					'Do': 'show message Question3_incorrect',
 				},
 			},
 		},
 		'show image chapter1_question3_solution right',
-		'm Comme illustré sur l\'image, avec une lumière de 20 lux, tu seras capable de voir la route devant toi lorsqu\'il fait nuit et qu\'il n\'y pas d\'autres éclairages.',
+		'm Comme illustré sur l\'image, avec une lumière de 200 lumen, tu seras capable de voir la route devant toi lorsqu\'il fait nuit et qu\'il n\'y pas d\'autres éclairages.',
 		'p Ha oui, je me rends mieux compte désormais.',
 		'm Oui, et au même titre que les lumières, voici également 5 autres éléments primordiaux à avoir sur son vélo.',
 		'show image chapter1_mostImportant1 on left',
@@ -529,10 +512,13 @@ monogatari.script ({
 		'hide image chapter1_mostImportant4 on left',
 		'm Et pour finir, des pneus gonflés et en bon état.',
 		'p Effectivement, cet équipement me paraît plus que nécessaire !',
+		'hide image chapter1_mostImportant4',
+		'hide image chapter1_mostImportant4',
+		'hide image chapter1_question2_solution',
 		'm Pour terminer, il faut mentionner la méthode de l\'oignon pour ce qui est du vestimentaire.',
 		'hide image chapter1_mostImportant5',
 		'hide image chapter1_question3_solution',
-		'hide image chapter1_question2_solution',
+		'hide image chapter1_question3_solution',
 		'show image chapter1_apparels1 on center',
 		'm La première couche d\'habits pour le cycliste sont simplement des sous-vêtements qui vont aider à évacuer l\'humidité. Par contre, quand tu fais du vélo de course et que tu portes un bib, le sous-vêtement est vivement déconseillé.',
 		'show image chapter1_apparels2 on center',
@@ -553,7 +539,7 @@ monogatari.script ({
 
 	'Scene4': [
 		'show scene chapter2 with fadeIn',
-		'play sound pedals',
+		'play sound pedals with fade 3',
 		'wait 4000',
 		'jump Scene5',
 	],
@@ -732,7 +718,7 @@ monogatari.script ({
 	
 	'Scene6': [
 		'show scene chapter3 with fadeIn',
-		'play sound pedals',
+		'play sound pedals with fade 3',
 		'wait 4000',
 		'jump Scene7',
 	],
@@ -788,22 +774,6 @@ monogatari.script ({
 		{
 			'Choice': {
 				// Question 13
-				'Dialog': 'm Est-ce que tu peux être sanctionner si tu roules sur le trottoir ?',
-				'1': {
-					'Text': 'Oui',
-					'onChosen': function(){updateCapital()},
-					'onRevert': function(){revertCapital()},
-					'Do': 'show message Question13_correct',
-				},
-				'2': {
-					'Text': 'Non',
-					'Do': 'show message Question13_incorrect',
-				},
-			},
-		},
-		{
-			'Choice': {
-				// Question 14
 				'Dialog': 'm Combien risques-tu de payer si tu roules dans une zone piétonne ?',
 				'1': {
 					'Text': '10 CHF',
@@ -823,7 +793,7 @@ monogatari.script ({
 		},
 		{
 			'Choice': {
-				// Question 15
+				// Question 14
 				'Dialog': 'Laquelle de ces infractions est considérée plus grave que les autres ?',
 				'1': {
 					'Text': 'Ne pas utiliser la piste cyclable',
@@ -843,7 +813,7 @@ monogatari.script ({
 		},
 		{
 			'Choice': {
-				// Question 16
+				// Question 15
 				'Dialog': 'Tu sais maintenant que tu seras amendé 60 CHF si tu circules sans feu sur une route non-éclairées de nuit. Penses-tu que le même tarif s\'applique à une route éclairée ?',
 				'1': {
 					'Text': 'Oui',
@@ -859,7 +829,7 @@ monogatari.script ({
 		},
 		{
 			'Choice': {
-				// Question 17
+				// Question 16
 				'Dialog': 'Combien seras-tu amendé si tu lâches complètement ton guidon en roulant ?',
 				'1': {
 					'Text': '60 CHF',
