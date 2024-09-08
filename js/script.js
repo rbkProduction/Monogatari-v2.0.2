@@ -410,10 +410,10 @@ monogatari.script ({
 				'Warning': 'Merci d\'entrer un nom'
 			},
 		},
-		'jump SceneIntro',
+		'jump Intro',
 	],
 
-	'SceneIntro' : [
+	'Intro' : [
 		'centered Bonjour {{player.name}}.',
 		'centered Safe ride est un jeu de prévention sur les codes de la route et les infractions auquel tu peux être sujet lors de tes sorties à vélo, que ce soit en solo ou en peloton.',
 		'centered Tu vas découvrir les gestes de sécurité à appliquer, ainsi que les réflexes à adopter pour une bonne conduite sur la route.',
