@@ -132,50 +132,40 @@ monogatari.action ('message').messages ({
 	},
 	'Question13_correct': {
 		title: 'Correct !',
-		subtitle: 'Sanctionné !',
-		body: 'Eh oui, ce n\'est pas parce que tu n\'es pas un véhicule motorisé que cela te laisse le droit de rouler sur le trottoir et de déranger les piétons.',
+		subtitle: '30 CHF',
+		body: 'Tout comme ne pas s\'arrêter au stop, rouler dans une zone piétonne est passible de 30 CHF d\'amende. Ça a peut-être l\'air minime comme coût, mais ça, plus ça, plus ça, tu vas finir par sponsoriser l\'État si tu continues comme ça.',
 	},
 	'Question13_incorrect': {
 		title: 'Incorrect !',
-		subtitle: 'Sanctionné !',
-		body: 'Eh oui, ce n\'est pas parce que tu n\'es pas un véhicule motorisé que cela te laisse le droit de rouler sur le trottoir et de déranger les piétons.',
+		subtitle: '30 CHF',
+		body: 'Tout comme ne pas s\'arrêter au stop, rouler dans une zone piétonne est passible de 30 CHF d\'amende. Ça a peut-être l\'air minime comme coût, mais ça, plus ça, plus ça, tu vas finir par sponsoriser l\'État si tu continues comme ça.',
 	},
 	'Question14_correct': {
 		title: 'Correct !',
-		subtitle: '30 CHF',
-		body: 'Tout comme ne pas s\'arrêter au stop, rouler dans une zone piétonne est passible de 30 CHF d\'amende. Ça a peut-être l\'air minime comme coût, mais ça, plus ça, plus ça, tu vas finir par sponsoriser l\'État si tu continues comme ça.',
+		subtitle: 'Rouler de nuit sans feu',
+		body: 'Ça t\'étonne peut-être, mais rouler de nuit sans feu alors que la route n\'est pas éclairée te reviendra à 60 CHF d\'amende. Ne pas accorder la priorité à un passage pour piétons est sanctionné à hauteur de 40 CHF, et ne pas utiliser la piste cyclable te coûtera 30 CHF.',
 	},
 	'Question14_incorrect': {
 		title: 'Incorrect !',
-		subtitle: '30 CHF',
-		body: 'Tout comme ne pas s\'arrêter au stop, rouler dans une zone piétonne est passible de 30 CHF d\'amende. Ça a peut-être l\'air minime comme coût, mais ça, plus ça, plus ça, tu vas finir par sponsoriser l\'État si tu continues comme ça.',
+		subtitle: 'Rouler de nuit sans feu',
+		body: 'Ça t\'étonne peut-être, mais rouler de nuit sans feu alors que la route n\'est pas éclairée te reviendra à 60 CHF d\'amende. Ne pas accorder la priorité à un passage pour piétons est sanctionné à hauteur de 40 CHF, et ne pas utiliser la piste cyclable te coûtera 30 CHF.',
 	},
 	'Question15_correct': {
 		title: 'Correct !',
-		subtitle: 'Rouler de nuit sans feu',
-		body: 'Ça t\'étonne peut-être, mais rouler de nuit sans feu alors que la route n\'est pas éclairée te reviendra à 60 CHF d\'amende. Ne pas accorder la priorité à un passage pour piétons est sanctionné à hauteur de 40 CHF, et ne pas utiliser la piste cyclable te coûtera 30 CHF.',
+		subtitle: 'C\'est 40 CHF sur les routes éclairées',
+		body: 'Rouler sans lumière est vivement déconseillé, mais tant qu\'à faire, il vaut mieux le faire en ville, où c\'est un minimum éclairé de nuit.',
 	},
 	'Question15_incorrect': {
 		title: 'Incorrect !',
-		subtitle: 'Rouler de nuit sans feu',
-		body: 'Ça t\'étonne peut-être, mais rouler de nuit sans feu alors que la route n\'est pas éclairée te reviendra à 60 CHF d\'amende. Ne pas accorder la priorité à un passage pour piétons est sanctionné à hauteur de 40 CHF, et ne pas utiliser la piste cyclable te coûtera 30 CHF.',
+		subtitle: 'C\'est 40 CHF sur les routes éclairées',
+		body: 'Rouler sans lumière est vivement déconseillé, mais tant qu\'à faire, il vaut mieux le faire en ville, où c\'est un minimum éclairé de nuit.',
 	},
 	'Question16_correct': {
-		title: 'Correct !',
-		subtitle: 'C\'est 40 CHF sur les routes éclairées',
-		body: 'Rouler sans lumière est vivement déconseillé, mais tant qu\'à faire, il vaut mieux le faire en ville, où c\'est un minimum éclairé de nuit.',
-	},
-	'Question16_incorrect': {
-		title: 'Incorrect !',
-		subtitle: 'C\'est 40 CHF sur les routes éclairées',
-		body: 'Rouler sans lumière est vivement déconseillé, mais tant qu\'à faire, il vaut mieux le faire en ville, où c\'est un minimum éclairé de nuit.',
-	},
-	'Question17_correct': {
 		title: 'Correct !',
 		subtitle: '20 CHF',
 		body: 'Bon, ça c\'est si tu veux faire ton malin devant les autres et frimer.',
 	},
-	'Question17_incorrect': {
+	'Question16_incorrect': {
 		title: 'Incorrect !',
 		subtitle: '20 CHF',
 		body: 'Bon, ça c\'est si tu veux faire ton malin devant les autres et frimer.',
@@ -231,6 +221,7 @@ monogatari.assets ('music', {
 	chapter1: 'chapter1/Sofa - Dyalla.mp3',
 	chapter2: 'chapter2/Bump - Dyalla.mp3',
 	chapter3: 'chapter3/In Dreams - Lish Grooves.mp3',
+	lastChapter: 'lastChapter/Refresher - Dyalla.mp3',
 	end: 'end/Good Energy - Dyalla.mp3',
 });
 
@@ -284,6 +275,8 @@ monogatari.assets ('scenes', {
 	'chapter2_background': 'chapter2_background.svg',
 	'chapter3': 'chapter3.svg',
 	'chapter3_background': 'chapter3_background.svg',
+	'lastChapter': 'lastChapter.svg',
+	'lastChapter_background': 'lastChapter_background.svg',
 	'ending': 'ending.svg',
 });
 
@@ -341,7 +334,7 @@ function uploadStatBar() {
 // Function to add an expense
 function revertCapital() {
 	// Add the amount of risk to be added to the score
-	capital += 6.25;
+	capital += 5;
 	// Upload the stat bar
 	uploadStatBar(capital);
 	return true;
@@ -350,7 +343,7 @@ function revertCapital() {
 // Function to substract an expense
 function updateCapital() {
 	// Add the amount of risk to be deducted to the score
-	capital -= 6.25;
+	capital -= 5;
 	// Upload the stat bar
 	uploadStatBar(capital);
 };
@@ -772,17 +765,17 @@ monogatari.script ({
 				'Dialog': 'm Combien risques-tu de payer si tu roules dans une zone piétonne ?',
 				'1': {
 					'Text': '10 CHF',
-					'Do': 'show message Question14_incorrect',
+					'Do': 'show message Question13_incorrect',
 				},
 				'2': {
 					'Text': '30 CHF',
 					'onChosen': function(){updateCapital()},
 					'onRevert': function(){revertCapital()},
-					'Do': 'show message Question14_correct',
+					'Do': 'show message Question13_correct',
 				},
 				'3': {
 					'Text': '15 CHF',
-					'Do': 'show message Question14_incorrect',
+					'Do': 'show message Question13_incorrect',
 				},
 			},
 		},
@@ -792,17 +785,17 @@ monogatari.script ({
 				'Dialog': 'Laquelle de ces infractions est considérée plus grave que les autres ?',
 				'1': {
 					'Text': 'Ne pas utiliser la piste cyclable',
-					'Do': 'show message Question15_incorrect',
+					'Do': 'show message Question14_incorrect',
 				},
 				'2': {
 					'Text': 'Ne pas accorder la priorité à un passage pour piéton',
-					'Do': 'show message Question15_incorrect',
+					'Do': 'show message Question14_incorrect',
 				},
 				'3': {
 					'Text': 'Circuler sans feu sur une route non-éclairée de nuit',
 					'onChosen': function(){updateCapital()},
 					'onRevert': function(){revertCapital()},
-					'Do': 'show message Question15_correct',
+					'Do': 'show message Question14_correct',
 				},
 			},
 		},
@@ -812,13 +805,13 @@ monogatari.script ({
 				'Dialog': 'Tu sais maintenant que tu seras amendé 60 CHF si tu circules sans feu sur une route non-éclairées de nuit. Penses-tu que le même tarif s\'applique à une route éclairée ?',
 				'1': {
 					'Text': 'Oui',
-					'Do': 'show message Question16_incorrect',
+					'Do': 'show message Question15_incorrect',
 				},
 				'2': {
 					'Text': 'Non',
 					'onChosen': function(){updateCapital()},
 					'onRevert': function(){revertCapital()},
-					'Do': 'show message Question16_correct',
+					'Do': 'show message Question15_correct',
 				},
 			},
 		},
@@ -828,7 +821,7 @@ monogatari.script ({
 				'Dialog': 'Combien seras-tu amendé si tu lâches complètement ton guidon en roulant ?',
 				'1': {
 					'Text': '60 CHF',
-					'Do': 'show message Question17_incorrect',
+					'Do': 'show message Question16_incorrect',
 				},
 				'2': {
 					'Text': '20 CHF',
@@ -838,16 +831,117 @@ monogatari.script ({
 				},
 				'3': {
 					'Text': '80 CHF',
+					'Do': 'show message Question16_incorrect',
+				},
+			},
+		},
+		'jump Scene8',
+	],
+
+	'Scene8': [
+		'show scene lastChapter with fadeIn',
+		'play sound pedals',
+		'wait 4000',
+		'jump Scene9',
+	],
+	
+	'Scene9': [
+		// Last chapter
+		'stop sound pedals',
+		'stop music chapter3',
+		'play music lastChapter on loop with volume 20',
+		'show scene lastChapter_background with fadeIn',
+		'show character p thirdside on left with fadeIn',
+		'show character m laughing on right with fadeIn',
+		'm Voyons maintenant si tu as tout bien retenu.',
+		'p Allons-y !',
+		{
+			'Choice': {
+				// Question 17
+				'Dialog': 'Est-ce que tu penses qu\'il est important de vérifier son matériel avant chaque sortie à vélo ?',
+				'Oui': {
+					'Text': 'Bien sûr !',
+					'onChosen': function(){updateCapital()},
+					'onRevert': function(){revertCapital()},
+					'Do': 'show message Question17_correct',
+				},
+				'Non': {
+					'Text': 'Non, je n\'ai jamais eu de problèmes de matériel',
 					'Do': 'show message Question17_incorrect',
+				},
+			},
+		},
+		{
+			'Choice': {
+				// Question 18
+				'Dialog': 'Que dois-tu vérifier avant chaque sortie à vélo ?',
+				'1': {
+					'Text': 'Les freins',
+					'Do': 'show message Question18_incorrect',
+				},
+				'2': {
+					'Text': 'Les pneus',
+					'Do': 'show message Question18_incorrect',
+				},
+				'3': {
+					'Text': 'Les lumières',
+					'Do': 'show message Question18_incorrect',
+				},
+				'4': {
+					'Text': 'Tout ce qui précède',
+					'onChosen': function(){updateCapital()},
+					'onRevert': function(){revertCapital()},
+					'Do': 'show message Question18_correct',
+				},
+			},
+		},
+		{
+			'Choice': {
+				// Question 19
+				'Dialog': 'Quel est la méthode de l\'oignon ?',
+				'1': {
+					'Text': 'L\'utilisation du gilet fluorescent',
+					'Do': 'show message Question19_incorrect',
+				},
+				'2': {
+					'Text': 'Une superposition de vêtements',
+					'onChosen': function(){updateCapital()},
+					'onRevert': function(){revertCapital()},
+					'Do': 'show message Question19_correct',
+				},
+				'3': {
+					'Text': 'Le fait de porter des lunettes pour protéger les yeux du vent',
+					'Do': 'show message Question19_incorrect',
+				},
+			},
+		},
+		{
+			'Choice': {
+				// Question 20
+				'Dialog': 'En plus de freins en bon état et de pneus bien gonflés, qu\'est-ce qui est élémentaire d\'avoir sur un vélo ?',
+				'1': {
+					'Text': 'Un casque',
+					'Do': 'show message Question20_incorrect',
+				},
+				'2': {
+					'Text': 'Une sonnette',
+					'Do': 'show message Question20_incorrect',
+				},
+				'3': {
+					'Text': 'Les catadioptres et les lumières',
+					'onChosen': function(){updateCapital()},
+					'onRevert': function(){revertCapital()},
+					'Do': 'show message Question20_correct',
 				},
 			},
 		},
 		'play sound pedals',
 		'jump End',
-	],	
+	],
 
 	'End': [
-		'stop music chapter3',
+		'stop music lastChapter',
+		'stop sound pedals',
 		'play music end on loop with volume 20',
 		'show scene ending',
 		'show character p smiling on left',
