@@ -170,6 +170,46 @@ monogatari.action ('message').messages ({
 		subtitle: '20 CHF',
 		body: 'Bon, ça c\'est si tu veux faire ton malin devant les autres et frimer.',
 	},
+	'Question17_correct': {
+		title: 'Correct !',
+		subtitle: 'Évidemment que c\'est important',
+		body: 'Tu devrais le savoir, être bien équipé est primordial pour assurer un minimum sa sécurité à vélo.',
+	},
+	'Question17_incorrect': {
+		title: 'Incorrect !',
+		subtitle: 'C\'est important de vérifier son matériel',
+		body: 'Tu devrais le savoir, être bien équipé est primordial pour assurer un minimum sa sécurité à vélo.',
+	},
+	'Question18_correct': {
+		title: 'Correct !',
+		subtitle: 'Les trois',
+		body: 'Il faut vérifier tous ces éléments : les freins, les pneus mais aussi les lumières !',
+	},
+	'Question18_incorrect': {
+		title: 'Incorrect !',
+		subtitle: 'Les trois',
+		body: 'Il faut vérifier tous ces éléments : les freins, les pneus mais aussi les lumières !',
+	},
+	'Question19_correct': {
+		title: 'Correct !',
+		subtitle: 'Une superposition de vêtements',
+		body: 'Il faut bien t\'habiller à vélo et t\'assurer que tu es prêt à braver le froid, la pluie et le vent.',
+	},
+	'Question19_incorrect': {
+		title: 'Incorrect !',
+		subtitle: 'Une superposition de vêtements',
+		body: 'Il faut bien t\'habiller à vélo et t\'assurer que tu es prêt à braver le froid, la pluie et le vent.',
+	},
+	'Question20_correct': {
+		title: 'Correct !',
+		subtitle: 'Les lumières',
+		body: 'Le casque et la sonnette sont recommandés, mais les lumières sont primordiales !',
+	},
+	'Question20_incorrect': {
+		title: 'Incorrect !',
+		subtitle: 'Les lumières',
+		body: 'Le casque et la sonnette sont recommandés, mais les lumières sont primordiales !',
+	},
 });
 
 // Define the notifications used in the game
@@ -362,14 +402,18 @@ monogatari.script ({
 					return input.trim ().length > 0;
 				},
 				'Save': (input) => {
-					monogatari.storage ({ player: { name: input}});
+					monogatari.storage ({ player: { name: input }});
 				},
 				'Revert': () => {
-					monogatari.storage ({ player: { name: ''}});
+					monogatari.storage ({ player: { name: '' }});
 				},
 				'Warning': 'Merci d\'entrer un nom'
-			}
+			},
 		},
+		'jump SceneIntro',
+	],
+
+	'SceneIntro' : [
 		'centered Bonjour {{player.name}}.',
 		'centered Safe ride est un jeu de prévention sur les codes de la route et les infractions auquel tu peux être sujet lors de tes sorties à vélo, que ce soit en solo ou en peloton.',
 		'centered Tu vas découvrir les gestes de sécurité à appliquer, ainsi que les réflexes à adopter pour une bonne conduite sur la route.',
