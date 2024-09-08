@@ -392,9 +392,9 @@ function updateCapital() {
 monogatari.script ({
 	// The game starts here.
 	'Start': [
-		'show notification Welcome',
 		'show scene homepage',
 		'play music intro with volume 20',
+		'show notification Welcome',
 		{
 			'Input': {
 				'Text': 'Quel est ton nom ?',
@@ -410,10 +410,6 @@ monogatari.script ({
 				'Warning': 'Merci d\'entrer un nom'
 			},
 		},
-		'jump Intro',
-	],
-
-	'Intro' : [
 		'centered Bonjour {{player.name}}.',
 		'centered Safe ride est un jeu de prévention sur les codes de la route et les infractions auquel tu peux être sujet lors de tes sorties à vélo, que ce soit en solo ou en peloton.',
 		'centered Tu vas découvrir les gestes de sécurité à appliquer, ainsi que les réflexes à adopter pour une bonne conduite sur la route.',
@@ -449,7 +445,7 @@ monogatari.script ({
 		'play music chapter1 on loop with volume 20',
 		'show scene chapter1_background with fadeIn',
 		'show character p smiling on left with fadeIn',
-		'show character m smiling on right with fadeIn',
+		'show character m front on right with fadeIn',
 		'm Avoir un matériel adéquat est primordial à vélo. Tu vas te souvenir que cela peut t\'être utile, voire même te sauver la vie.',
 		'p Oui, effectivement. Peux-tu me donner un exemple ?',
 		'm Typiquement, le casque.',
@@ -474,6 +470,8 @@ monogatari.script ({
 				},
 			},
 		},
+		'show character p interested on left with fadeIn',
+		'show character m shocked on right with fadeIn',
 		'm Le port du casque, bien que pas obligatoire, peut sauver ta vie dans beaucoup de circonstances.',
 		'p C\'est vrai.',
 		'm Continuous.',
@@ -500,11 +498,13 @@ monogatari.script ({
 				},
 			},
 		},
+		'show character p shocked on left with fadeIn',
+		'show character m laughing on right with fadeIn',
 		'm Oui, regarde.',
 		'show image chapter1_question2_solution top',
-		'hide image chapter1_question2',
 		'm Comme le montre l\'image désormais, une lumière de 100 lumen te permettra de voir la route devant toi lorsqu\'il fait nuit.',
 		'show image chapter1_question3 right with fadeIn',
+		'hide image chapter1_question2',
 		{
 			'Choice': {
 				// Question 3
@@ -525,26 +525,30 @@ monogatari.script ({
 				},
 			},
 		},
+		'show character p thirdSide on left with fadeIn',
+		'show character m smiling on right with fadeIn',
 		'show image chapter1_question3_solution right',
-		'hide image chapter1_question3',
 		'm Comme illustré sur l\'image, avec une lumière de 200 lumen, tu seras capable de voir la route devant toi lorsqu\'il fait nuit et qu\'il n\'y a pas d\'autres éclairages.',
 		'p Ha oui, je me rends mieux compte désormais.',
+		'hide image chapter1_question3',
 		'm Oui, et au même titre que les lumières, voici également 5 autres éléments primordiaux à avoir sur son vélo.',
 		'show image chapter1_mostImportant1 on left',
 		'm Le catadioptre rouge arrière.',
 		'show image chapter1_mostImportant2 on left',
-		'hide image chapter1_mostImportant1',
 		'm Le catadioptre blanc avant.',
 		'show image chapter1_mostImportant3 on left',
-		'hide image chapter1_mostImportant2',
+		'show character p surprised on left with fadeIn',
+		'show character m surprised on right with fadeIn',
 		'm Les freins avant et arrière, qui doivent être entretenus et en bon état en permanence.',
 		'show image chapter1_mostImportant4 on left',
-		'hide image chapter1_mostImportant3',
 		'm Les catadioptres jaunes à l\'avant et à l\'arrière des pédales.',
 		'show image chapter1_mostImportant5 on left',
-		'hide image chapter1_mostImportant4',
 		'm Et pour finir, des pneus gonflés et en bon état.',
 		'p Effectivement, cet équipement me paraît plus que nécessaire !',
+		'hide image chapter1_mostImportant1',
+		'hide image chapter1_mostImportant2',
+		'hide image chapter1_mostImportant3',
+		'hide image chapter1_mostImportant4',
 		'hide image chapter1_question2_solution',
 		'hide image chapter1_question3_solution',
 		'hide image chapter1_mostImportant5',
@@ -552,16 +556,18 @@ monogatari.script ({
 		'show image chapter1_apparels1 on center',
 		'm La première couche d\'habits pour le cycliste est simplement des sous-vêtements qui vont aider à évacuer l\'humidité. Par contre, quand tu fais du vélo de course et que tu portes un bib, le sous-vêtement est vivement déconseillé.',
 		'show image chapter1_apparels2 on center',
-		'hide image chapter1_apparels1',
 		'm Ensuite, la deuxième couche est le maillot, ainsi que le short, avec une veste ou une polaire lors de fraîches températures.',
 		'show image chapter1_apparels3 on center',
-		'hide image chapter1_apparels2',
 		'm La dernière couche permet de se protéger en cas de vent ou fortes pluies afin de rester au sec et de garder un minimum de confort pendant l\'effort.',
 		'show image chapter1_apparels4 on center',
-		'hide image chapter1_apparels3',
 		'm En cas de besoin, le cycliste peut aussi se préparer avec des gants ou des surchaussures pour parer au froid des extrémités, et surtout les protéger en cas de chute.',
+		'show character p rightSide on left with fadeIn',
+		'show character m leftSide on right with fadeIn',
 		'p Merci pour toutes ces informations, je me sens déjà plus à l\'aise avec le sujet.',
 		'm De rien. J\'espère que tu feras bon usage de ce que tu as appris !',
+		'hide image chapter1_apparels1',
+		'hide image chapter1_apparels2',
+		'hide image chapter1_apparels3',
 		'hide image chapter1_apparels4',
 		'm Maintenant, passons à la gestuelle des cyclistes, principalement lorsqu\'ils roulent en peloton.',
 		'jump Scene4',
@@ -607,6 +613,8 @@ monogatari.script ({
 				},
 			},
 		},
+		'show character p doubting on left with fadeIn',
+		'show character m laughing on right with fadeIn',
 		'hide image chapter2_question4',
 		'show image chapter2_question5 top with fadeIn',
 		{
@@ -629,6 +637,8 @@ monogatari.script ({
 				},
 			},
 		},
+		'show character p interested on left with fadeIn',
+		'show character m surprised on right with fadeIn',
 		'hide image chapter2_question5',
 		'show image chapter2_question6 top with fadeIn',
 		{
@@ -651,6 +661,8 @@ monogatari.script ({
 				},
 			},
 		},
+		'show character p smiling on left with fadeIn',
+		'show character m smiling on right with fadeIn',
 		'hide image chapter2_question6',
 		'show image chapter2_question7 top with fadeIn',
 		{
@@ -673,6 +685,8 @@ monogatari.script ({
 				},
 			},
 		},
+		'show character p doubting on left with fadeIn',
+		'show character m thirdSide on right with fadeIn',
 		'hide image chapter2_question7',
 		'show image chapter2_question8 top with fadeIn',
 		{
@@ -695,6 +709,8 @@ monogatari.script ({
 				},
 			},
 		},
+		'show character p shocked on left with fadeIn',
+		'show character m laughing on right with fadeIn',
 		'hide image chapter2_question8',
 		'show image chapter2_question9 top with fadeIn',
 		{
@@ -717,6 +733,8 @@ monogatari.script ({
 				},
 			},
 		},
+		'show character p interested on left with fadeIn',
+		'show character m surprised on right with fadeIn',
 		'hide image chapter2_question9',
 		'show image chapter2_question10 top with fadeIn',
 		{
@@ -741,8 +759,12 @@ monogatari.script ({
 		},
 		'hide image chapter2_question10',
 		'm Tu t\'en es bien sorti ! Bravo.',
+		'show character p rightSide on left with fadeIn',
+		'show character m leftSide on right with fadeIn',
 		'p Merci.',
 		'm Maintenant que nous avons abordé la gestuelle à adopter en roulant en peloton, passons aux infractions.',
+		'show character p front on left with fadeIn',
+		'show character m front on right with fadeIn',
 		'p Je suis prêt !',
 		'jump Scene6',
 	],
@@ -761,7 +783,7 @@ monogatari.script ({
 		'play music chapter3 on loop with volume 20',
 		'show scene chapter3_background with fadeIn',
 		'show character p smiling on left with fadeIn',
-		'show character m surprised on right with fadeIn',
+		'show character m smiling on right with fadeIn',
 		'm Je vais maintenant te poser une série de questions sur les infractions et ce qu\'elles engendrent.',
 		{
 			'Choice': {
@@ -783,6 +805,8 @@ monogatari.script ({
 				},
 			},
 		},
+		'show character p doubting on left with fadeIn',
+		'show character m front on right with fadeIn',
 		{
 			'Choice': {
 				// Question 12
@@ -803,6 +827,8 @@ monogatari.script ({
 				},
 			},
 		},
+		'show character p laughing on left with fadeIn',
+		'show character m smiling on right with fadeIn',
 		{
 			'Choice': {
 				// Question 13
@@ -823,6 +849,8 @@ monogatari.script ({
 				},
 			},
 		},
+		'show character p interested on left with fadeIn',
+		'show character m surprised on right with fadeIn',
 		{
 			'Choice': {
 				// Question 14
@@ -843,6 +871,8 @@ monogatari.script ({
 				},
 			},
 		},
+		'show character p shocked on left with fadeIn',
+		'show character m thirdSide on right with fadeIn',
 		{
 			'Choice': {
 				// Question 15
@@ -859,6 +889,8 @@ monogatari.script ({
 				},
 			},
 		},
+		'show character p doubting on left with fadeIn',
+		'show character m laughing on right with fadeIn',
 		{
 			'Choice': {
 				// Question 16
@@ -895,8 +927,8 @@ monogatari.script ({
 		'stop music chapter3',
 		'play music lastChapter on loop with volume 20',
 		'show scene lastChapter_background with fadeIn',
-		'show character p thirdside on left with fadeIn',
-		'show character m laughing on right with fadeIn',
+		'show character p thirdSide on left with fadeIn',
+		'show character m thirdSide on right with fadeIn',
 		'm Voyons maintenant si tu as tout bien retenu.',
 		'p Allons-y !',
 		{
@@ -915,6 +947,8 @@ monogatari.script ({
 				},
 			},
 		},
+		'show character p doubting on left with fadeIn',
+		'show character m smiling on right with fadeIn',
 		{
 			'Choice': {
 				// Question 18
@@ -939,6 +973,8 @@ monogatari.script ({
 				},
 			},
 		},
+		'show character p surprised on left with fadeIn',
+		'show character m front on right with fadeIn',
 		{
 			'Choice': {
 				// Question 19
@@ -959,6 +995,8 @@ monogatari.script ({
 				},
 			},
 		},
+		'show character p smiling on left with fadeIn',
+		'show character m surprised on right with fadeIn',
 		{
 			'Choice': {
 				// Question 20
@@ -991,6 +1029,8 @@ monogatari.script ({
 		'show character p smiling on left',
 		'show character m smiling on right',
 		'm Bravo, tu as répondu à toutes les questions que j\'avais préparé pour toi ! Félicitations.',
+		'show character p rightSide on left',
+		'show character m leftSide on right',
 		'p Merci, j\'ai apprécié apprendre de nouvelles choses et cela ne m\'a pas fait de mal de revoir certaines règles. Je pense que je suis à jour au niveau de la sécurité routière à vélo.',
 		'm Tu es parti avec un capital risque de 100% et en répondant aux questions, tu as réussi à le descendre à {{newCapital}} %.',
 		'm Mais n\'oublie jamais, bien que tu sois préparé et prévenu des dangers de la route, tu ne peux jamais faire confiance aux autres. Tu dois constamment être vigileant, puisque les erreurs sont vite arrivées. Sois prudent et à bientôt !',
