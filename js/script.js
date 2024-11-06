@@ -392,10 +392,26 @@ function updateCapital() {
 monogatari.script ({
 	// The game starts here.
 	'Start': [
-		'show scene homepage',
+		'show scene homepage with fadeIn',
+		{
+			'Choice': {
+				'Dialog': 'Connaîs-tu les règles du jeu ?',
+				'Oui': {
+					'Text': 'Oui',
+					'Do': 'jump Scene1',
+				},
+				'Non': {
+					'Text': 'Non',
+					'Do': 'jump Rules',
+				},
+			}
+		},
+	],
+
+	'Rules': [
 		'centered Bienvenue sur le jeu Safe Ride.',
 		'centered Safe ride est un jeu de prévention sur les codes de la route et les infractions auquel tu peux être sujet lors de tes sorties à vélo, que ce soit en solo ou en peloton.',
-		'centered Tu vas découvrir les gestes de sécurité à appliquer, ainsi que les réflexes à adopter pour une bonne conduite sur la route.',
+		'centered Découvre les gestes de sécurité à appliquer, ainsi que les réflexes à adopter pour une bonne conduite sur la route !',
 		'centered Tu vas commencer le jeu avec un capital risque de 100%.',
 		'centered Réponds correctement au maximum de questions et tu feras baisser ton capital risque. Essaie de finir le jeu avec le pourcentage le plus faible !',
 		'jump Scene1',
