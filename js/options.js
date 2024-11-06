@@ -20,7 +20,7 @@ monogatari.settings({
 	'Name': 'Safe Ride',
 
 	// The version of your game in semantic versioning (https://semver.org/).
-	'Version': '0.2.0',
+	'Version': '1.0.0',
 
 	// Initial Label *
 	'Label': 'Start',
@@ -38,7 +38,7 @@ monogatari.settings({
 	'LanguageSelectionScreen': true,
 
 	// Music for the Main Menu.
-	
+	'MainScreenMusic': '',
 
 	// Prefix for the Save Slots in Local Storage.
 	'SaveLabel': 'Save',

@@ -393,24 +393,7 @@ monogatari.script ({
 	// The game starts here.
 	'Start': [
 		'show scene homepage',
-		'play music intro with volume 20',
-		'show notification Welcome',
-		{
-			'Input': {
-				'Text': 'Quel est ton nom ?',
-				'Validation': (input) => {
-					return input.trim ().length > 0;
-				},
-				'Save': (input) => {
-					monogatari.storage ({ player: { name: input }});
-				},
-				'Revert': () => {
-					monogatari.storage ({ player: { name: '' }});
-				},
-				'Warning': 'Merci d\'entrer un nom'
-			},
-		},
-		'centered Bonjour {{player.name}}.',
+		'centered Bienvenue sur le jeu Safe Ride.',
 		'centered Safe ride est un jeu de prévention sur les codes de la route et les infractions auquel tu peux être sujet lors de tes sorties à vélo, que ce soit en solo ou en peloton.',
 		'centered Tu vas découvrir les gestes de sécurité à appliquer, ainsi que les réflexes à adopter pour une bonne conduite sur la route.',
 		'centered Tu vas commencer le jeu avec un capital risque de 100%.',
@@ -419,10 +402,26 @@ monogatari.script ({
 	],
 
 	'Scene1': [
+		'play music intro with volume 20',
 		'show scene street with fadeIn',
 		'show character p rightSide on left with fadeIn',
 		'show character m leftSide on right with fadeIn',
-		'm Bonjour, j\'ai entendu dire que tu souhaitais en savoir plus sur la sécurité à vélo.',
+		{
+			'Input': {
+				'Text': 'Quel est ton nom ?',
+				'Validation': (input) => {
+					return input.trim ().length > 0;
+				},
+				'Save': (input) => {
+					monogatari.storage ({ player: {name: input}});
+				},
+				'Revert': () => {
+					monogatari.storage ({player: { name: '' }});
+				},
+				'Warning': 'Merci d\'entrer un nom.',
+			}
+		},
+		'm Bonjour {{player.name}}, j\'ai entendu dire que tu souhaitais en savoir plus sur la sécurité à vélo.',
 		'p C\'est exact. Je crois que cela ne me ferait pas de mal de revoir les bases.',
 		'm Ça tombe bien, je suis experte en la matière ! Voyons tout de suite si on doit te considérer comme un danger sur la voie publique.',
 		'show character m smiling on right',
