@@ -42,6 +42,3 @@ Tous les bruits sonores et les musiques sont issus de la bibliothèque audio de 
 Toutes les images ont été extraites de [Canva Premium](https://www.canva.com/), ainsi que de [Freepik](https://fr.freepik.com/).
 Les personnages ont gratuitement été tirée de [Freepik](https://fr.freepik.com/).
 
-### Debugging
-Une coquille se cache lorsque l'utilisateur entre son nom au début du jeu. En attendant que je résolve ce problème, l'utilisateur doit cliquer sur le bouton « Back » et recommencer la manipulation. Ceci débloquera le bug et permettra à l'utilisateur de jouer au jeu. 
-
